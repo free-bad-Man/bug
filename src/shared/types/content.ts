@@ -3,7 +3,10 @@ export type NavItem = {
   href: string;
 };
 
-export type ServiceSection = 'krovelnye-raboty' | 'gidroizolyatsiya' | 'natyazhnye-potolki';
+export type ServiceSection =
+  | 'sanitarnoe-soprovozhdenie'
+  | 'dezinfektsiya'
+  | 'deratizatsiya';
 
 export type ServiceCard = {
   slug: string;

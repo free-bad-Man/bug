@@ -18,12 +18,11 @@ type SitemapRoute = {
 
 const STATIC_ROUTES: readonly SitemapRoute[] = [
   { path: '/', priority: 1, changeFrequency: 'weekly' },
-  { path: '/krovelnye-raboty/', priority: 0.95, changeFrequency: 'weekly' },
-  { path: '/gidroizolyatsiya/', priority: 0.9, changeFrequency: 'weekly' },
-  { path: '/natyazhnye-potolki/', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/sanitarnoe-soprovozhdenie/', priority: 0.95, changeFrequency: 'weekly' },
+  { path: '/dezinfektsiya/', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/deratizatsiya/', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/nashi-raboty/', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/stati/', priority: 0.75, changeFrequency: 'weekly' },
-  { path: '/simferopol/', priority: 0.75, changeFrequency: 'weekly' },
   { path: '/o-kompanii/', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/kontakty/', priority: 0.7, changeFrequency: 'monthly' },
 ];
@@ -68,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       path: `/${item.section}/${item.slug}/`,
       changeFrequency: 'weekly',
-      priority: item.section === 'krovelnye-raboty' ? 0.9 : 0.85,
+      priority: item.section === 'sanitarnoe-soprovozhdenie' ? 0.9 : 0.85,
     }),
   );
 

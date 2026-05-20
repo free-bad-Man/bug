@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { ListingPageTemplate } from '@/components/templates/ListingPageTemplate';
 import { sectionPages } from '@/shared/content/sections';
 
-const data = sectionPages.gidroizolyatsiya;
+const data = sectionPages.deratizatsiya;
 
 export const metadata: Metadata = {
   title: data.seoTitle,

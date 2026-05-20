@@ -11,7 +11,7 @@ import { buildMetadata } from '@/shared/lib/metadata';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getServiceStaticParams('gidroizolyatsiya');
+  return getServiceStaticParams('sanitarnoe-soprovozhdenie');
 }
 
 export async function generateMetadata({
@@ -20,31 +20,27 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const item = getServiceBySectionAndSlug('gidroizolyatsiya', slug);
+  const item = getServiceBySectionAndSlug('sanitarnoe-soprovozhdenie', slug);
 
-  if (!item) {
-    return {};
-  }
+  if (!item) return {};
 
   return buildMetadata({
-    path: `/gidroizolyatsiya/${slug}/`,
-    seo: getServiceSeoEntry('gidroizolyatsiya', slug),
+    path: `/sanitarnoe-soprovozhdenie/${slug}/`,
+    seo: getServiceSeoEntry('sanitarnoe-soprovozhdenie', slug),
     fallbackTitle: item.title,
     fallbackDescription: item.subtitle,
   });
 }
 
-export default async function WaterproofingServicePage({
+export default async function SanitaryServicePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const item = getServiceBySectionAndSlug('gidroizolyatsiya', slug);
+  const item = getServiceBySectionAndSlug('sanitarnoe-soprovozhdenie', slug);
 
-  if (!item) {
-    return notFound();
-  }
+  if (!item) return notFound();
 
   return <ServicePageTemplate {...item} />;
 }

@@ -11,7 +11,7 @@ import { buildMetadata } from '@/shared/lib/metadata';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getServiceStaticParams('krovelnye-raboty');
+  return getServiceStaticParams('deratizatsiya');
 }
 
 export async function generateMetadata({
@@ -20,31 +20,27 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const item = getServiceBySectionAndSlug('krovelnye-raboty', slug);
+  const item = getServiceBySectionAndSlug('deratizatsiya', slug);
 
-  if (!item) {
-    return {};
-  }
+  if (!item) return {};
 
   return buildMetadata({
-    path: `/krovelnye-raboty/${slug}/`,
-    seo: getServiceSeoEntry('krovelnye-raboty', slug),
+    path: `/deratizatsiya/${slug}/`,
+    seo: getServiceSeoEntry('deratizatsiya', slug),
     fallbackTitle: item.title,
     fallbackDescription: item.subtitle,
   });
 }
 
-export default async function RoofingServicePage({
+export default async function DeratizationServicePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const item = getServiceBySectionAndSlug('krovelnye-raboty', slug);
+  const item = getServiceBySectionAndSlug('deratizatsiya', slug);
 
-  if (!item) {
-    return notFound();
-  }
+  if (!item) return notFound();
 
   return <ServicePageTemplate {...item} />;
 }
