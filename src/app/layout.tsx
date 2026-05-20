@@ -19,8 +19,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Крымская Кровельная',
-  description: 'Ремонт, восстановление и гидроизоляция кровли в Крыму',
+  title: 'РЎР°РЅРёС‚Р°СЂРЅР°СЏ РїРѕРґРіРѕС‚РѕРІРєР° Рё СЃРѕРїСЂРѕРІРѕР¶РґРµРЅРёРµ РѕР±СЉРµРєС‚РѕРІ РљСЂС‹РјР°',
+  description:
+    'РЎР°РЅРёС‚Р°СЂРЅР°СЏ РїРѕРґРіРѕС‚РѕРІРєР°, РґРµР·РёРЅСЃРµРєС†РёСЏ, РґРµСЂР°С‚РёР·Р°С†РёСЏ Рё РґРѕРіРѕРІРѕСЂРЅРѕРµ СЃРѕРїСЂРѕРІРѕР¶РґРµРЅРёРµ РіРѕСЃС‚РёРЅРёС†, РѕР±С‰РµРїРёС‚Р°, РїР»СЏР¶РЅС‹С… Рё РєРѕРјРјРµСЂС‡РµСЃРєРёС… РѕР±СЉРµРєС‚РѕРІ РљСЂС‹РјР°.',
   icons: {
     icon: '/icon.svg',
     shortcut: '/icon.svg',
@@ -37,10 +38,6 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${manrope.variable} ${montserrat.variable}`}>
         <GlobalJsonLd />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-0 bg-[url('/brand/logo/background-logo_2.png')] bg-cover bg-center bg-no-repeat"
-        />
 
         <div className="relative z-10 min-h-screen bg-transparent">
           <SiteHeader />
