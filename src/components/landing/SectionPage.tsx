@@ -1,45 +1,51 @@
 import { LandingPageData } from '@/shared/data/site';
 import { SiteShell } from './SiteShell';
-import { CardGrid, GlassCard, Section } from './UI';
+import { CardGrid, GlassCard, Section, StatCard } from './UI';
 import { LeadForm } from './LeadForm';
 
 export function SectionPage({ page }: { page: LandingPageData }) {
   return (
     <SiteShell background={page.background}>
-      <section className="mx-auto grid max-w-7xl gap-6 pt-8 lg:min-h-[calc(100vh-12rem)] lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <div className="glass rounded-[2.2rem] p-6 md:p-8 lg:p-10">
-          <p className="inline-flex rounded-full border border-white/60 bg-white/48 px-4 py-2 text-sm font-bold text-[var(--accent-dark)]">
+      <section className="mx-auto grid max-w-7xl gap-5 pt-4 md:pt-7 lg:min-h-[calc(100vh-10.5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.55fr)] lg:items-center">
+        <div className="glass hero-card rounded-[1.9rem] p-5 md:rounded-[2.4rem] md:p-8 lg:p-10">
+          <p className="inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[var(--accent-dark)] md:text-sm">
             {page.eyebrow}
           </p>
-          <h1 className="mt-6 text-balance text-4xl font-black leading-[0.96] tracking-[-0.06em] md:text-6xl lg:text-7xl">
+          <h1 className="hero-title mt-6 text-balance text-[2.7rem] font-black md:text-6xl lg:text-7xl xl:text-[5.25rem]">
             {page.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-xl leading-9 text-[var(--muted)]">
+          <p className="mt-6 max-w-3xl text-lg font-semibold leading-8 text-[var(--text-soft)] md:text-xl md:leading-9">
             {page.subtitle}
           </p>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#lead"
-              className="rounded-2xl bg-[var(--accent)] px-6 py-4 text-sm font-bold text-white shadow-xl shadow-emerald-900/10 transition hover:bg-[var(--accent-dark)]"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--accent)] px-6 text-sm font-black text-white shadow-xl shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-[var(--accent-dark)]"
             >
               Получить расчёт
             </a>
             <a
               href="#details"
-              className="rounded-2xl border border-white/60 bg-white/45 px-6 py-4 text-sm font-bold transition hover:bg-white/65"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/60 bg-white/45 px-6 text-sm font-black transition hover:bg-white/68"
             >
               Подробнее
             </a>
           </div>
+
+          <div className="mt-7 grid gap-3 sm:grid-cols-3">
+            <StatCard value="объект" label="смотрим тип, площадь, поток и рисковые зоны" />
+            <StatCard value="зона" label="учитываем Севастополь, Симферополь, ЮБК и логистику" />
+            <StatCard value="режим" label="подбираем запуск, договор, сезон или усиление" />
+          </div>
         </div>
 
-        <div className="glass rounded-[2.2rem] p-5 md:p-6">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--accent-dark)]">
+        <div className="glass rounded-[1.9rem] p-4 md:rounded-[2.2rem] md:p-5">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--accent-dark)] md:text-sm">
             Что важно
           </p>
-          <div className="mt-5 grid gap-3">
+          <div className="mt-4 grid gap-3">
             {page.bullets.map((item) => (
-              <div key={item} className="glass-soft rounded-3xl px-5 py-4 font-semibold">
+              <div key={item} className="glass-soft rounded-3xl px-5 py-4 text-sm font-black leading-6 md:text-base">
                 {item}
               </div>
             ))}

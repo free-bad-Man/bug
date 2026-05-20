@@ -11,20 +11,20 @@ export function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="glass-soft grid gap-4 rounded-[1.8rem] p-5">
+    <form onSubmit={handleSubmit} className="glass-soft grid gap-4 rounded-[1.7rem] p-4 md:rounded-[1.9rem] md:p-5">
       <div className="grid gap-4 md:grid-cols-2">
-        <label className="grid gap-2 text-sm font-bold">
+        <label className="grid gap-2 text-sm font-black">
           Имя
           <input
-            className="min-h-12 rounded-2xl border border-white/50 bg-white/60 px-4 outline-none focus:bg-white"
+            className="min-h-12 rounded-2xl border border-white/55 bg-white/64 px-4 outline-none transition focus:border-[var(--accent)] focus:bg-white"
             placeholder="Как к вам обращаться"
             required
           />
         </label>
-        <label className="grid gap-2 text-sm font-bold">
+        <label className="grid gap-2 text-sm font-black">
           Телефон
           <input
-            className="min-h-12 rounded-2xl border border-white/50 bg-white/60 px-4 outline-none focus:bg-white"
+            className="min-h-12 rounded-2xl border border-white/55 bg-white/64 px-4 outline-none transition focus:border-[var(--accent)] focus:bg-white"
             placeholder="+7"
             required
           />
@@ -32,9 +32,9 @@ export function LeadForm() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <label className="grid gap-2 text-sm font-bold">
+        <label className="grid gap-2 text-sm font-black">
           Тип объекта
-          <select className="min-h-12 rounded-2xl border border-white/50 bg-white/60 px-4 outline-none focus:bg-white" required>
+          <select className="min-h-12 rounded-2xl border border-white/55 bg-white/64 px-4 outline-none transition focus:border-[var(--accent)] focus:bg-white" required>
             <option value="">Выберите</option>
             <option>Гостиница / гостевой дом</option>
             <option>Кафе / ресторан / кухня</option>
@@ -43,9 +43,9 @@ export function LeadForm() {
             <option>Другое</option>
           </select>
         </label>
-        <label className="grid gap-2 text-sm font-bold">
+        <label className="grid gap-2 text-sm font-black">
           Город / зона
-          <select className="min-h-12 rounded-2xl border border-white/50 bg-white/60 px-4 outline-none focus:bg-white" required>
+          <select className="min-h-12 rounded-2xl border border-white/55 bg-white/64 px-4 outline-none transition focus:border-[var(--accent)] focus:bg-white" required>
             <option value="">Выберите</option>
             <option>Севастополь</option>
             <option>Симферополь</option>
@@ -56,20 +56,24 @@ export function LeadForm() {
         </label>
       </div>
 
-      <label className="grid gap-2 text-sm font-bold">
+      <label className="grid gap-2 text-sm font-black">
         Задача и рисковые зоны
         <textarea
-          className="min-h-28 rounded-2xl border border-white/50 bg-white/60 px-4 py-3 outline-none focus:bg-white"
+          className="min-h-28 rounded-2xl border border-white/55 bg-white/64 px-4 py-3 outline-none transition focus:border-[var(--accent)] focus:bg-white"
           placeholder="Например: запуск объекта к сезону, кухня, хранение, подвал, территория"
           required
         />
       </label>
 
-      <button className="min-h-12 rounded-2xl bg-[var(--accent)] px-6 font-bold text-white shadow-lg shadow-emerald-900/10 transition hover:bg-[var(--accent-dark)]">
+      <button className="min-h-12 rounded-2xl bg-[var(--accent)] px-6 font-black text-white shadow-lg shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-[var(--accent-dark)]">
         Получить расчёт
       </button>
 
-      {status ? <p className="text-sm leading-6 text-[var(--accent-dark)]">{status}</p> : null}
+      {status ? (
+        <p className="rounded-2xl bg-white/48 px-4 py-3 text-sm font-semibold leading-6 text-[var(--accent-dark)]">
+          {status}
+        </p>
+      ) : null}
     </form>
   );
 }

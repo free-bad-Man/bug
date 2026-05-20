@@ -2,13 +2,16 @@
 
 :root {
   --text: #122018;
+  --text-soft: rgba(18, 32, 24, 0.82);
   --muted: #5d6f63;
   --accent: #1f7a4d;
   --accent-dark: #155f3b;
-  --glass: rgba(255, 255, 255, 0.34);
-  --glass-strong: rgba(255, 255, 255, 0.58);
-  --line: rgba(255, 255, 255, 0.52);
-  --shadow: rgba(18, 32, 24, 0.13);
+  --accent-light: #e4f6eb;
+  --glass: rgba(255, 255, 255, 0.38);
+  --glass-strong: rgba(255, 255, 255, 0.68);
+  --line: rgba(255, 255, 255, 0.56);
+  --shadow: rgba(18, 32, 24, 0.14);
+  --radius-xl: 2rem;
 }
 
 * {
@@ -17,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  min-width: 320px;
 }
 
 body {
@@ -25,6 +29,7 @@ body {
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   background: #eef5f0;
+  text-rendering: geometricPrecision;
 }
 
 a {
@@ -39,23 +44,109 @@ textarea {
   font: inherit;
 }
 
+input,
+select,
+textarea {
+  color: var(--text);
+}
+
+::selection {
+  color: white;
+  background: var(--accent);
+}
+
 .glass {
   border: 1px solid var(--line);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.24));
-  box-shadow: 0 24px 70px var(--shadow);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.28));
+  box-shadow:
+    0 24px 70px var(--shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(24px) saturate(1.15);
+  -webkit-backdrop-filter: blur(24px) saturate(1.15);
 }
 
 .glass-soft {
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  background: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 18px 46px rgba(18, 32, 24, 0.09);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.24));
+  box-shadow:
+    0 18px 46px rgba(18, 32, 24, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(18px) saturate(1.12);
+  -webkit-backdrop-filter: blur(18px) saturate(1.12);
+}
+
+.glass-quiet {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px) saturate(1.08);
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
 }
 
 .text-balance {
   text-wrap: balance;
+}
+
+.page-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -15;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(239, 248, 243, 0.3), rgba(255, 255, 255, 0.38) 43%, rgba(235, 247, 239, 0.14)),
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.12) 42%, rgba(213, 239, 224, 0.24) 100%);
+}
+
+.hero-title {
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.45), transparent 26rem),
+    radial-gradient(circle at 86% 92%, rgba(31, 122, 77, 0.08), transparent 18rem);
+}
+
+.hero-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.mobile-scroll {
+  scrollbar-width: none;
+}
+
+.mobile-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@supports not ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+  .glass,
+  .glass-soft,
+  .glass-quiet {
+    background: rgba(255, 255, 255, 0.86);
+  }
+}
+
+@media (max-width: 767px) {
+  .glass {
+    box-shadow: 0 16px 46px rgba(18, 32, 24, 0.1);
+  }
+
+  .hero-title {
+    letter-spacing: -0.052em;
+    line-height: 0.98;
+  }
 }

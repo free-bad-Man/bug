@@ -1,47 +1,53 @@
 import Link from 'next/link';
 import { benefits, home, pages, prices, products } from '@/shared/data/site';
 import { SiteShell } from './SiteShell';
-import { CardGrid, GlassCard, Section } from './UI';
+import { CardGrid, GlassCard, Section, StatCard } from './UI';
 import { LeadForm } from './LeadForm';
 
 export function HomePage() {
   return (
     <SiteShell background={home.background}>
-      <section className="mx-auto grid max-w-7xl gap-6 pt-8 lg:min-h-[calc(100vh-12rem)] lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <div className="glass rounded-[2.2rem] p-6 md:p-8 lg:p-10">
-          <p className="inline-flex rounded-full border border-white/60 bg-white/48 px-4 py-2 text-sm font-bold text-[var(--accent-dark)]">
+      <section className="mx-auto grid max-w-7xl gap-5 pt-4 md:pt-7 lg:min-h-[calc(100vh-10.5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.55fr)] lg:items-center">
+        <div className="glass hero-card rounded-[1.9rem] p-5 md:rounded-[2.4rem] md:p-8 lg:p-10">
+          <p className="inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[var(--accent-dark)] md:text-sm">
             {home.eyebrow}
           </p>
-          <h1 className="mt-6 text-balance text-4xl font-black leading-[0.96] tracking-[-0.06em] md:text-6xl lg:text-7xl">
+          <h1 className="hero-title mt-6 text-balance text-[2.7rem] font-black md:text-6xl lg:text-7xl xl:text-[5.25rem]">
             {home.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-xl leading-9 text-[var(--muted)]">
+          <p className="mt-6 max-w-3xl text-lg font-semibold leading-8 text-[var(--text-soft)] md:text-xl md:leading-9">
             {home.subtitle}
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#lead"
-              className="rounded-2xl bg-[var(--accent)] px-6 py-4 text-sm font-bold text-white shadow-xl shadow-emerald-900/10 transition hover:bg-[var(--accent-dark)]"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--accent)] px-6 text-sm font-black text-white shadow-xl shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-[var(--accent-dark)]"
             >
               Получить расчёт
             </a>
             <Link
               href="/sanitarnoe-soprovozhdenie/"
-              className="rounded-2xl border border-white/60 bg-white/45 px-6 py-4 text-sm font-bold transition hover:bg-white/65"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/60 bg-white/45 px-6 text-sm font-black transition hover:bg-white/68"
             >
               Как работаем
             </Link>
           </div>
+
+          <div className="mt-7 grid gap-3 sm:grid-cols-3">
+            <StatCard value="15 мин" label="предварительный расчёт после сбора данных" />
+            <StatCard value="B2B" label="гостиницы, общепит, склады и сезонные зоны" />
+            <StatCard value="договор" label="акты, журнал, график и зона ответственности" />
+          </div>
         </div>
 
-        <div className="glass rounded-[2.2rem] p-5 md:p-6">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--accent-dark)]">
+        <div className="glass rounded-[1.9rem] p-4 md:rounded-[2.2rem] md:p-5">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--accent-dark)] md:text-sm">
             Для кого
           </p>
-          <div className="mt-5 grid gap-3">
+          <div className="mt-4 grid gap-3">
             {home.bullets.map((item) => (
-              <div key={item} className="glass-soft rounded-3xl px-5 py-4 font-semibold">
+              <div key={item} className="glass-soft rounded-3xl px-5 py-4 text-sm font-black leading-6 md:text-base">
                 {item}
               </div>
             ))}
@@ -64,6 +70,7 @@ export function HomePage() {
       <Section
         eyebrow="Преимущества"
         title="Санитарная защита без хаоса и случайных цен"
+        text="Клиент покупает не просто обработку, а спокойный запуск объекта, регулярный контроль, документы и снижение управленческого риска."
       >
         <CardGrid>
           {benefits.map((item) => (
@@ -79,9 +86,11 @@ export function HomePage() {
       >
         <CardGrid>
           {pages.map((page) => (
-            <Link key={page.href} href={page.href} className="glass-soft rounded-[1.6rem] p-5 transition hover:-translate-y-1 hover:bg-white/42">
-              <p className="text-sm font-bold text-[var(--accent-dark)]">{page.eyebrow}</p>
-              <h3 className="mt-3 text-2xl font-bold tracking-[-0.03em]">{page.navLabel}</h3>
+            <Link key={page.href} href={page.href} className="glass-soft rounded-[1.5rem] p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/46 md:rounded-[1.75rem] md:p-6">
+              <p className="inline-flex rounded-full bg-[var(--accent-light)] px-3 py-1 text-xs font-black text-[var(--accent-dark)]">
+                {page.eyebrow}
+              </p>
+              <h3 className="mt-4 text-2xl font-black tracking-[-0.035em]">{page.navLabel}</h3>
               <p className="mt-4 text-base leading-7 text-[var(--muted)]">{page.subtitle}</p>
             </Link>
           ))}
@@ -95,8 +104,8 @@ export function HomePage() {
       >
         <div className="grid gap-3 md:grid-cols-2">
           {prices.map(([name, price]) => (
-            <div key={name} className="glass-soft flex items-center justify-between gap-4 rounded-3xl px-5 py-4">
-              <span className="font-semibold">{name}</span>
+            <div key={name} className="glass-soft flex flex-col gap-2 rounded-3xl px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+              <span className="font-bold leading-6">{name}</span>
               <span className="shrink-0 font-black text-[var(--accent-dark)]">{price}</span>
             </div>
           ))}
