@@ -7,26 +7,26 @@ function safeJsonLd(data: unknown) {
 
 function getSectionLabel(section: ServicePageData['section']) {
   switch (section) {
-    case 'gidroizolyatsiya':
-      return 'Гидроизоляция';
-    case 'natyazhnye-potolki':
-      return 'Натяжные потолки';
-    case 'krovelnye-raboty':
+    case 'dezinfektsiya':
+      return 'Р”РµР·РёРЅСЃРµРєС†РёСЏ';
+    case 'deratizatsiya':
+      return 'Р”РµСЂР°С‚РёР·Р°С†РёСЏ';
+    case 'sanitarnoe-soprovozhdenie':
     default:
-      return 'Кровельные работы';
+      return 'РЎР°РЅРёС‚Р°СЂРЅРѕРµ СЃРѕРїСЂРѕРІРѕР¶РґРµРЅРёРµ';
   }
 }
 
 function getServiceType(section: ServicePageData['section']) {
-  if (section === 'natyazhnye-potolki') {
-    return 'Натяжные потолки';
+  switch (section) {
+    case 'dezinfektsiya':
+      return 'Р”РµР·РёРЅСЃРµРєС†РёСЏ РѕР±СЉРµРєС‚РѕРІ';
+    case 'deratizatsiya':
+      return 'Р”РµСЂР°С‚РёР·Р°С†РёСЏ РѕР±СЉРµРєС‚РѕРІ';
+    case 'sanitarnoe-soprovozhdenie':
+    default:
+      return 'РЎР°РЅРёС‚Р°СЂРЅР°СЏ РїРѕРґРіРѕС‚РѕРІРєР° Рё СЃРѕРїСЂРѕРІРѕР¶РґРµРЅРёРµ РѕР±СЉРµРєС‚РѕРІ';
   }
-
-  if (section === 'gidroizolyatsiya') {
-    return 'Гидроизоляция';
-  }
-
-  return 'Кровельные работы';
 }
 
 export function ServiceJsonLd({ data }: { data: ServicePageData }) {
@@ -43,7 +43,7 @@ export function ServiceJsonLd({ data }: { data: ServicePageData }) {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Главная',
+        name: 'Р“Р»Р°РІРЅР°СЏ',
         item: `${siteUrl}/`,
       },
       {
@@ -72,18 +72,18 @@ export function ServiceJsonLd({ data }: { data: ServicePageData }) {
       '@id': `${siteUrl}/#organization`,
     },
     areaServed: [
-      'Симферополь',
-      'Севастополь',
-      'Ялта',
-      'Алушта',
-      'Феодосия',
-      'Евпатория',
-      'Саки',
-      'Бахчисарай',
-      'Судак',
-      'Керчь',
-      'Джанкой',
-      'Крым',
+      'РЎРµРІР°СЃС‚РѕРїРѕР»СЊ',
+      'РЎРёРјС„РµСЂРѕРїРѕР»СЊ',
+      'РЇР»С‚Р°',
+      'РђР»СѓС€С‚Р°',
+      'Р¤РµРѕРґРѕСЃРёСЏ',
+      'Р•РІРїР°С‚РѕСЂРёСЏ',
+      'РЎР°РєРё',
+      'Р‘Р°С…С‡РёСЃР°СЂР°Р№',
+      'РЎСѓРґР°Рє',
+      'РљРµСЂС‡СЊ',
+      'Р”Р¶Р°РЅРєРѕР№',
+      'РљСЂС‹Рј',
     ],
     url: pageUrl,
   };

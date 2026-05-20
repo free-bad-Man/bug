@@ -18,7 +18,7 @@ export type ArticleTeaserItem = {
 
 export type ServicePageData = {
   slug: string;
-  section: 'krovelnye-raboty' | 'gidroizolyatsiya' | 'natyazhnye-potolki';
+  section: 'sanitarnoe-soprovozhdenie' | 'dezinfektsiya' | 'deratizatsiya';
   title: string;
   h1: string;
   seoTitle: string;
