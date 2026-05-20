@@ -5,8 +5,7 @@ dist
 .env
 .env.local
 .env.*.local
-amo_token_payload.json
-tsconfig.tsbuildinfo
 tmp/
+tsconfig.tsbuildinfo
 .DS_Store
 *.log

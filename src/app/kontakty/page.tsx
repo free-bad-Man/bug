@@ -1,5 +1,5 @@
-import { ContactsPageTemplate } from '@/components/templates/ContactsPageTemplate';
+import { ContactsPage } from '@/components/landing/ContactsPage';
 
-export default function ContactsPage() {
-  return <ContactsPageTemplate />;
+export default function Page() {
+  return <ContactsPage />;
 }

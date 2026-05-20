@@ -1,20 +1,5 @@
-import { HomePageTemplate } from '@/components/templates/HomePageTemplate';
-import {
-  articles,
-  cases,
-  homeFaq,
-  priceRows,
-  services,
-} from '@/shared/data/site';
+import { HomePage } from '@/components/landing/HomePage';
 
-export default function HomePage() {
-  return (
-    <HomePageTemplate
-      services={services}
-      prices={priceRows}
-      cases={cases}
-      faq={homeFaq}
-      articles={articles}
-    />
-  );
+export default function Page() {
+  return <HomePage />;
 }

@@ -1,14 +1,12 @@
-import type { Metadata } from 'next';
-import { ListingPageTemplate } from '@/components/templates/ListingPageTemplate';
-import { sectionPages } from '@/shared/content/sections';
+import { SectionPage } from '@/components/landing/SectionPage';
+import { pages } from '@/shared/data/site';
 
-const data = sectionPages.sanitarnoeSoprovozhdenie;
-
-export const metadata: Metadata = {
-  title: data.seoTitle,
-  description: data.seoDescription,
-};
+const page = pages.find((item) => item.slug === 'sanitarnoe-soprovozhdenie');
 
 export default function Page() {
-  return <ListingPageTemplate data={data} />;
+  if (!page) {
+    return null;
+  }
+
+  return <SectionPage page={page} />;
 }
