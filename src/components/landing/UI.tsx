@@ -91,7 +91,7 @@ export function ProcessStep({
 }) {
   return (
     <article className="glass-soft rounded-[1.5rem] p-5 md:p-6">
-      <p className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--accent)] text-sm font-semibold text-white">
+      <p className="glass-button inline-flex h-10 w-10 items-center justify-center rounded-2xl text-sm font-semibold">
         {number}
       </p>
       <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">{title}</h3>

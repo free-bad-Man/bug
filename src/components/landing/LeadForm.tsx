@@ -65,7 +65,7 @@ export function LeadForm() {
         />
       </label>
 
-      <button className="min-h-12 rounded-2xl bg-[var(--accent)] px-6 font-semibold text-white shadow-lg shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-[var(--accent-dark)]">
+      <button className="glass-button-strong min-h-12 rounded-2xl px-6 font-semibold transition">
         Получить расчёт
       </button>
 

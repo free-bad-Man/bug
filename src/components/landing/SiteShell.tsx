@@ -42,7 +42,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
 
             <a
               href={company.phoneHref}
-              className="shrink-0 rounded-2xl bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-900/10 transition hover:bg-[var(--accent-dark)]"
+              className="glass-button-strong shrink-0 rounded-2xl px-4 py-2 text-sm font-semibold transition"
             >
               Позвонить
             </a>
@@ -73,7 +73,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
             <p className="mt-1">Севастополь и Крым. Санитарная подготовка объектов.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a className="rounded-2xl bg-white/34 px-4 py-2 transition hover:bg-white/58" href={company.phoneHref}>
+            <a className="glass-button rounded-2xl px-4 py-2 transition" href={company.phoneHref}>
               {company.phone}
             </a>
           </div>

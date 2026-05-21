@@ -150,3 +150,38 @@ textarea {
     line-height: 0.98;
   }
 }
+.glass-button {
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.54), rgba(226, 232, 228, 0.3));
+  color: var(--text);
+  box-shadow:
+    0 18px 42px rgba(18, 32, 24, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+}
+
+.glass-button:hover {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(226, 232, 228, 0.42));
+  transform: translateY(-1px);
+}
+
+.glass-button-strong {
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgba(216, 224, 219, 0.34));
+  color: var(--text);
+  box-shadow:
+    0 20px 46px rgba(18, 32, 24, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(1.1);
+  -webkit-backdrop-filter: blur(20px) saturate(1.1);
+}
+
+.glass-button-strong:hover {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(216, 224, 219, 0.46));
+  transform: translateY(-1px);
+}
