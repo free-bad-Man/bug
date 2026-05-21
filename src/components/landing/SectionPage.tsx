@@ -6,8 +6,8 @@ import { LeadForm } from './LeadForm';
 export function SectionPage({ page }: { page: LandingPageData }) {
   return (
     <SiteShell background={page.background}>
-      <section className="mx-auto grid max-w-7xl gap-5 pt-4 md:pt-7 lg:min-h-[calc(100vh-10.5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.55fr)] lg:items-center">
-        <div className="glass hero-card rounded-[1.9rem] p-5 md:rounded-[2.4rem] md:p-8 lg:p-10">
+      <section className="mx-auto flex max-w-7xl flex-col gap-5 pt-4 md:pt-7 lg:min-h-[calc(100vh-10.5rem)] lg:justify-center">
+        <div className="glass hero-card max-w-[860px] rounded-[1.9rem] p-5 md:rounded-[2.4rem] md:p-8 lg:p-10">
           <p className="inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent-dark)] md:text-sm">
             {page.eyebrow}
           </p>
@@ -39,11 +39,11 @@ export function SectionPage({ page }: { page: LandingPageData }) {
           </div>
         </div>
 
-        <div className="glass rounded-[1.9rem] p-4 md:rounded-[2.2rem] md:p-5">
+        <div className="glass max-w-[860px] rounded-[1.9rem] p-4 md:rounded-[2.2rem] md:p-5">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-dark)] md:text-sm">
             Что важно
           </p>
-          <div className="mt-4 grid gap-3">
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
             {page.bullets.map((item) => (
               <div key={item} className="glass-soft rounded-3xl px-5 py-4 text-sm font-semibold leading-6 md:text-base">
                 {item}
