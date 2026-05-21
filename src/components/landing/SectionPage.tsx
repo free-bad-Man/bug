@@ -6,7 +6,7 @@ import { LeadForm } from './LeadForm';
 export function SectionPage({ page }: { page: LandingPageData }) {
   return (
     <SiteShell background={page.background}>
-      <section className="mx-auto flex max-w-7xl flex-col gap-4 pt-4 md:gap-5 md:pt-7 lg:min-h-[calc(100vh-10.5rem)] lg:justify-center">
+      <section className="mx-auto flex max-w-7xl flex-col gap-4 pt-4 md:gap-5 md:pt-7">
         <div className="glass hero-card w-full rounded-[1.9rem] p-5 md:rounded-[2.4rem] md:p-8 lg:p-10">
           <p className="inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent-dark)] md:text-sm">
             {page.eyebrow}
