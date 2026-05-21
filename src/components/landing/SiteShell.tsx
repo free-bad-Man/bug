@@ -19,7 +19,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
       <header className="sticky top-0 z-30 px-3 py-3 md:px-5 md:py-4">
         <div className="glass mx-auto max-w-7xl rounded-[1.7rem] px-3 py-3 md:rounded-[2rem] md:px-5">
           <div className="flex items-center justify-between gap-3">
-            <Link href="/" className="brand" aria-label={company.name}>
+            <Link href="/" className="brand brand--header" aria-label={company.name}>
               <img className="brand__mark" src="/images/logo-mark.png" alt="" aria-hidden="true" />
               <span className="brand__text">
                 <span className="brand__title">{company.name}</span>
@@ -67,17 +67,13 @@ export function SiteShell({ background, children }: SiteShellProps) {
 
       <footer className="px-3 pb-4 md:px-5 md:pb-6">
         <div className="glass mx-auto flex max-w-7xl flex-col gap-5 rounded-[1.7rem] px-5 py-5 text-sm font-medium text-[var(--muted)] md:flex-row md:items-center md:justify-between md:rounded-[2rem]">
-          <div className="footer-brand">
-            <img
-              className="footer-brand__logo"
-              src="/images/logo-full-dark.png"
-              alt="Санитарная служба Крыма"
-            />
-            <div className="footer-brand__copy">
-              <p className="font-semibold text-[var(--text)]">© {company.name}</p>
-              <p className="mt-1">Севастополь и Крым. Санитарная подготовка объектов.</p>
-            </div>
-          </div>
+          <Link href="/" className="footer-brand" aria-label={company.name}>
+            <img className="footer-brand__mark" src="/images/logo-mark.png" alt="" aria-hidden="true" />
+            <span className="footer-brand__text">
+              <span className="font-semibold text-[var(--text)]">© {company.name}</span>
+              <span className="mt-1 block">Севастополь и Крым. Санитарная подготовка объектов.</span>
+            </span>
+          </Link>
 
           <div className="flex flex-wrap gap-3">
             <a className="glass-button rounded-2xl px-4 py-2 transition" href={company.phoneHref}>
