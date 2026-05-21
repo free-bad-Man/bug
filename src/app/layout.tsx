@@ -18,7 +18,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: '/icon.svg',
+    icon: '/images/logo-mark.png',
+    shortcut: '/images/logo-mark.png',
+    apple: '/images/logo-mark.png',
   },
   openGraph: {
     title: home.seoTitle,
