@@ -1,12 +1,46 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { company, home } from '@/shared/data/site';
+import { getMetadataBase } from '@/shared/lib/metadata';
 
 export const metadata: Metadata = {
-  title: 'Санитарная подготовка и сопровождение объектов Крыма',
-  description:
-    'Запуск объекта, сопровождение сезона, дезинсекция, дератизация и регулярная санитарная защита по договору для бизнеса Крыма.',
+  metadataBase: getMetadataBase(),
+  title: {
+    default: home.seoTitle,
+    template: `%s | ${company.name}`,
+  },
+  description: home.seoDescription,
+  applicationName: company.name,
+  authors: [{ name: company.name }],
+  creator: company.name,
+  publisher: company.name,
+  formatDetection: {
+    telephone: false,
+  },
   icons: {
     icon: '/icon.svg',
+  },
+  openGraph: {
+    title: home.seoTitle,
+    description: home.seoDescription,
+    url: '/',
+    siteName: company.name,
+    locale: 'ru_RU',
+    type: 'website',
+    images: [
+      {
+        url: '/backgrounds/main.png',
+        width: 1200,
+        height: 630,
+        alt: home.seoTitle,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: home.seoTitle,
+    description: home.seoDescription,
+    images: ['/backgrounds/main.png'],
   },
 };
 

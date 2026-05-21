@@ -1,12 +1,16 @@
 import { SectionPage } from '@/components/landing/SectionPage';
 import { pages } from '@/shared/data/site';
+import { buildPageMetadata } from '@/shared/lib/metadata';
 
-const page = pages.find((item) => item.slug === 'sanitarnoe-soprovozhdenie');
+const page = pages.find((item) => item.slug === 'sanitarnoe-soprovozhdenie')!;
+
+export const metadata = buildPageMetadata({
+  title: page.seoTitle,
+  description: page.seoDescription,
+  path: page.href,
+  image: page.background,
+});
 
 export default function Page() {
-  if (!page) {
-    return null;
-  }
-
   return <SectionPage page={page} />;
 }
