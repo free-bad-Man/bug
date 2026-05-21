@@ -8,25 +8,25 @@ export function SectionPage({ page }: { page: LandingPageData }) {
     <SiteShell background={page.background}>
       <section className="mx-auto grid max-w-7xl gap-5 pt-4 md:pt-7 lg:min-h-[calc(100vh-10.5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.55fr)] lg:items-center">
         <div className="glass hero-card rounded-[1.9rem] p-5 md:rounded-[2.4rem] md:p-8 lg:p-10">
-          <p className="inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[var(--accent-dark)] md:text-sm">
+          <p className="inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent-dark)] md:text-sm">
             {page.eyebrow}
           </p>
-          <h1 className="hero-title mt-6 text-balance text-[2.7rem] font-black md:text-6xl lg:text-7xl xl:text-[5.25rem]">
+          <h1 className="hero-title mt-6 text-balance text-[2.55rem] font-semibold md:text-6xl lg:text-7xl xl:text-[5rem]">
             {page.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg font-semibold leading-8 text-[var(--text-soft)] md:text-xl md:leading-9">
+          <p className="mt-6 max-w-3xl text-lg font-medium leading-8 text-[var(--text-soft)] md:text-xl md:leading-9">
             {page.subtitle}
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#lead"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--accent)] px-6 text-sm font-black text-white shadow-xl shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-[var(--accent-dark)]"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--accent)] px-6 text-sm font-semibold text-white shadow-xl shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-[var(--accent-dark)]"
             >
               Получить расчёт
             </a>
             <a
               href="#details"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/60 bg-white/45 px-6 text-sm font-black transition hover:bg-white/68"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/60 bg-white/45 px-6 text-sm font-semibold transition hover:bg-white/68"
             >
               Подробнее
             </a>
@@ -40,12 +40,12 @@ export function SectionPage({ page }: { page: LandingPageData }) {
         </div>
 
         <div className="glass rounded-[1.9rem] p-4 md:rounded-[2.2rem] md:p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--accent-dark)] md:text-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-dark)] md:text-sm">
             Что важно
           </p>
           <div className="mt-4 grid gap-3">
             {page.bullets.map((item) => (
-              <div key={item} className="glass-soft rounded-3xl px-5 py-4 text-sm font-black leading-6 md:text-base">
+              <div key={item} className="glass-soft rounded-3xl px-5 py-4 text-sm font-semibold leading-6 md:text-base">
                 {item}
               </div>
             ))}

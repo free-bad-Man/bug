@@ -1,34 +1,64 @@
 import Link from 'next/link';
 import { benefits, home, pages, prices, products } from '@/shared/data/site';
 import { SiteShell } from './SiteShell';
-import { CardGrid, GlassCard, Section, StatCard } from './UI';
+import { CardGrid, GlassCard, ProcessStep, Section, StatCard } from './UI';
 import { LeadForm } from './LeadForm';
+
+const painItems = [
+  {
+    title: 'Цена непонятна',
+    text: 'Клиент не хочет слышать случайную цену. Ему нужен диапазон, рассчитанный по объекту, зоне, рискам и режиму работ.',
+  },
+  {
+    title: 'Сезон нельзя сорвать',
+    text: 'Для гостиниц, ресторанов и пляжных объектов санитарный сбой быстро превращается в жалобы, отзывы и управленческий хаос.',
+  },
+  {
+    title: 'Разовый выезд не решает систему',
+    text: 'Объекту нужен подрядчик, график, документы и контроль, а не аварийный вызов каждый раз после проблемы.',
+  },
+];
+
+const processItems = [
+  {
+    title: 'Собираем 7 параметров',
+    text: 'Город, тип объекта, площадь, рисковые зоны, характер задачи, формат работ и срочность.',
+  },
+  {
+    title: 'Даём предварительный диапазон',
+    text: 'Расчёт за 15 минут после минимума данных. Цена объясняется логикой объекта, а не берётся наугад.',
+  },
+  {
+    title: 'Предлагаем следующий шаг',
+    text: 'Аудит, КП, запуск объекта, сопровождение сезона или регулярный договор — по ситуации.',
+  },
+];
 
 export function HomePage() {
   return (
     <SiteShell background={home.background}>
       <section className="mx-auto grid max-w-7xl gap-5 pt-4 md:pt-7 lg:min-h-[calc(100vh-10.5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.55fr)] lg:items-center">
         <div className="glass hero-card rounded-[1.9rem] p-5 md:rounded-[2.4rem] md:p-8 lg:p-10">
-          <p className="inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-[var(--accent-dark)] md:text-sm">
+          <p className="inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent-dark)] md:text-sm">
             {home.eyebrow}
           </p>
-          <h1 className="hero-title mt-6 text-balance text-[2.7rem] font-black md:text-6xl lg:text-7xl xl:text-[5.25rem]">
+          <h1 className="hero-title mt-6 text-balance text-[2.55rem] font-semibold md:text-6xl lg:text-7xl xl:text-[5rem]">
             {home.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg font-semibold leading-8 text-[var(--text-soft)] md:text-xl md:leading-9">
+          <p className="mt-6 max-w-3xl text-lg font-medium leading-8 text-[var(--text-soft)] md:text-xl md:leading-9">
             {home.subtitle}
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="#lead"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--accent)] px-6 text-sm font-black text-white shadow-xl shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-[var(--accent-dark)]"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[var(--accent)] px-6 text-sm font-semibold text-white shadow-xl shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-[var(--accent-dark)]"
             >
               Получить расчёт
             </a>
             <Link
               href="/sanitarnoe-soprovozhdenie/"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/60 bg-white/45 px-6 text-sm font-black transition hover:bg-white/68"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/60 bg-white/45 px-6 text-sm font-semibold transition hover:bg-white/68"
             >
               Как работаем
             </Link>
@@ -42,12 +72,12 @@ export function HomePage() {
         </div>
 
         <div className="glass rounded-[1.9rem] p-4 md:rounded-[2.2rem] md:p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--accent-dark)] md:text-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-dark)] md:text-sm">
             Для кого
           </p>
           <div className="mt-4 grid gap-3">
             {home.bullets.map((item) => (
-              <div key={item} className="glass-soft rounded-3xl px-5 py-4 text-sm font-black leading-6 md:text-base">
+              <div key={item} className="glass-soft rounded-3xl px-5 py-4 text-sm font-semibold leading-6 md:text-base">
                 {item}
               </div>
             ))}
@@ -56,9 +86,21 @@ export function HomePage() {
       </section>
 
       <Section
-        eyebrow="Продукты"
+        eyebrow="Боль рынка"
+        title="Объекту нужен не хаотичный выезд, а санитарная система"
+        text="Клиент боится не самих вредителей, а последствий: жалоб, плохих отзывов, срыва запуска, непонятной цены и отсутствия подрядчика в сезон."
+      >
+        <CardGrid>
+          {painItems.map((item) => (
+            <GlassCard key={item.title} title={item.title} text={item.text} />
+          ))}
+        </CardGrid>
+      </Section>
+
+      <Section
+        eyebrow="Решение"
         title="Запуск, сопровождение и регулярная защита"
-        text="Основная модель проекта — не разовый дешёвый выезд, а понятная цепочка: запуск объекта, сопровождение сезона, продление договора."
+        text="Основная модель проекта — понятная цепочка: подготовить объект, пройти сезон под контролем и продлить договор."
       >
         <CardGrid>
           {products.map((item) => (
@@ -68,8 +110,25 @@ export function HomePage() {
       </Section>
 
       <Section
+        eyebrow="Как считаем"
+        title="Предварительный расчёт за 15 минут"
+        text="Мы не называем цену наугад. Расчёт строится по типу объекта, зоне, рисковым помещениям, частоте визитов, SLA и внешнему контуру."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {processItems.map((item, index) => (
+            <ProcessStep
+              key={item.title}
+              number={`0${index + 1}`}
+              title={item.title}
+              text={item.text}
+            />
+          ))}
+        </div>
+      </Section>
+
+      <Section
         eyebrow="Преимущества"
-        title="Санитарная защита без хаоса и случайных цен"
+        title="Санитарная защита без случайных цен"
         text="Клиент покупает не просто обработку, а спокойный запуск объекта, регулярный контроль, документы и снижение управленческого риска."
       >
         <CardGrid>
@@ -87,10 +146,10 @@ export function HomePage() {
         <CardGrid>
           {pages.map((page) => (
             <Link key={page.href} href={page.href} className="glass-soft rounded-[1.5rem] p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/46 md:rounded-[1.75rem] md:p-6">
-              <p className="inline-flex rounded-full bg-[var(--accent-light)] px-3 py-1 text-xs font-black text-[var(--accent-dark)]">
+              <p className="inline-flex rounded-full bg-[var(--accent-light)] px-3 py-1 text-xs font-semibold text-[var(--accent-dark)]">
                 {page.eyebrow}
               </p>
-              <h3 className="mt-4 text-2xl font-black tracking-[-0.035em]">{page.navLabel}</h3>
+              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">{page.navLabel}</h3>
               <p className="mt-4 text-base leading-7 text-[var(--muted)]">{page.subtitle}</p>
             </Link>
           ))}
@@ -105,8 +164,8 @@ export function HomePage() {
         <div className="grid gap-3 md:grid-cols-2">
           {prices.map(([name, price]) => (
             <div key={name} className="glass-soft flex flex-col gap-2 rounded-3xl px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-              <span className="font-bold leading-6">{name}</span>
-              <span className="shrink-0 font-black text-[var(--accent-dark)]">{price}</span>
+              <span className="font-medium leading-6">{name}</span>
+              <span className="shrink-0 font-semibold text-[var(--accent-dark)]">{price}</span>
             </div>
           ))}
         </div>
