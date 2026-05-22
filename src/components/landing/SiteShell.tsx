@@ -16,9 +16,9 @@ export function SiteShell({ background, children }: SiteShellProps) {
         style={{ backgroundImage: `url(${background})` }}
       />
 
-      <header className="sticky top-0 z-30 px-3 py-3 md:px-5 md:py-4">
-        <div className="glass mx-auto max-w-7xl rounded-[1.7rem] px-3 py-3 md:rounded-[2rem] md:px-5">
-          <div className="flex items-center justify-between gap-3">
+      <header className="site-header sticky top-0 z-30 px-3 py-3 md:px-5 md:py-4">
+        <div className="glass site-header__inner mx-auto max-w-7xl rounded-[1.55rem] px-3 py-2.5 md:rounded-[1.85rem] md:px-4 md:py-3">
+          <div className="site-header__row flex items-center justify-between gap-3">
             <Link href="/" className="brand brand--header" aria-label={company.name}>
               <img className="brand__mark" src="/images/logo-mark.png" alt="" aria-hidden="true" />
               <span className="brand__text">
@@ -27,12 +27,12 @@ export function SiteShell({ background, children }: SiteShellProps) {
               </span>
             </Link>
 
-            <nav className="hidden min-w-0 items-center gap-0.5 xl:flex">
+            <nav className="site-header__nav hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:flex">
               {nav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-2xl px-3 py-2 text-sm font-medium text-[var(--text)]/76 transition hover:bg-white/48 hover:text-[var(--accent-dark)]"
+                  className="site-header__nav-link rounded-2xl px-3 py-2 text-sm font-medium text-[var(--text)]/76 transition hover:bg-white/48 hover:text-[var(--accent-dark)]"
                 >
                   {item.label}
                 </Link>
@@ -41,13 +41,13 @@ export function SiteShell({ background, children }: SiteShellProps) {
 
             <a
               href={company.phoneHref}
-              className="glass-button-strong shrink-0 rounded-2xl px-4 py-2 text-sm font-semibold transition"
+              className="glass-button-strong site-header__phone shrink-0 rounded-2xl px-4 py-2 text-sm font-semibold transition"
             >
               Позвонить
             </a>
           </div>
 
-          <nav className="mobile-scroll -mx-1 mt-3 flex gap-2 overflow-x-auto pb-1 xl:hidden">
+          <nav className="mobile-scroll -mx-1 mt-2.5 flex gap-2 overflow-x-auto pb-1 xl:hidden">
             {nav.map((item) => (
               <Link
                 key={item.href}
@@ -61,7 +61,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
         </div>
       </header>
 
-      <main className="relative z-10 px-3 pb-10 pt-3 md:px-5 md:pb-16">
+      <main className="relative z-10 px-3 pb-10 pt-2 md:px-5 md:pb-16 md:pt-3">
         {children}
       </main>
 

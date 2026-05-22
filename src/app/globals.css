@@ -384,3 +384,164 @@ textarea {
     height: 36px;
   }
 }
+/* Step 11 final header / brand / mobile polish overrides */
+.site-header__inner {
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.site-header__row {
+  min-height: 44px;
+}
+
+.site-header__nav-link {
+  white-space: nowrap;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: min(360px, calc(100vw - 146px));
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand__mark {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 13px rgba(16, 38, 26, 0.14));
+}
+
+.brand__text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.brand__title {
+  overflow: hidden;
+  color: #10261a;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand__subtitle {
+  overflow: hidden;
+  margin-top: 3px;
+  color: rgba(16, 38, 26, 0.58);
+  font-size: 10px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-brand__mark {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 13px rgba(16, 38, 26, 0.13));
+}
+
+.footer-brand__text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.footer-brand__logo {
+  display: none;
+}
+
+@media (max-width: 1240px) {
+  .site-header__nav-link {
+    padding-left: 0.62rem;
+    padding-right: 0.62rem;
+    font-size: 0.82rem;
+  }
+
+  .brand {
+    max-width: 320px;
+  }
+
+  .brand__subtitle {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+
+  .site-header__inner {
+    border-radius: 1.35rem;
+    padding: 0.62rem 0.7rem;
+  }
+
+  .site-header__row {
+    min-height: 38px;
+    gap: 0.55rem;
+  }
+
+  .brand {
+    max-width: calc(100vw - 132px);
+    gap: 8px;
+  }
+
+  .brand__mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand__title {
+    font-size: 14px;
+  }
+
+  .brand__subtitle {
+    display: none;
+  }
+
+  .site-header__phone {
+    padding: 0.55rem 0.78rem;
+    font-size: 0.78rem;
+  }
+
+  .footer-brand {
+    align-items: flex-start;
+  }
+
+  .footer-brand__mark {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand__title {
+    max-width: 152px;
+  }
+
+  .site-header__phone {
+    padding-left: 0.68rem;
+    padding-right: 0.68rem;
+  }
+}
