@@ -846,3 +846,27 @@ textarea {
   }
 }
 /* End Step 15 static header and glass scroll arrows */
+/* Step 16 fixed header correction */
+.site-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 40;
+}
+
+.site-header__inner {
+  max-height: calc(100vh - 18px);
+}
+
+.scroll-controls {
+  z-index: 34;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding-top: 0.55rem;
+    padding-bottom: 0.45rem;
+  }
+}
+/* End Step 16 fixed header correction */
