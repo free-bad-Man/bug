@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { company, nav } from '@/shared/data/site';
+import { ScrollControls } from './ScrollControls';
 
 type SiteShellProps = {
   background: string;
@@ -16,7 +17,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
         style={{ backgroundImage: `url(${background})` }}
       />
 
-      <header className="site-header sticky top-0 z-30 px-3 py-3 md:px-5 md:py-4">
+      <header className="site-header relative z-30 px-3 py-3 md:px-5 md:py-4">
         <div className="glass site-header__inner mx-auto max-w-7xl rounded-[1.55rem] px-3 py-2.5 md:rounded-[1.85rem] md:px-4 md:py-3">
           <div className="site-header__row flex items-center justify-between gap-3">
             <Link href="/" className="brand brand--header" aria-label={company.name}>
@@ -60,6 +61,8 @@ export function SiteShell({ background, children }: SiteShellProps) {
           </nav>
         </div>
       </header>
+
+      <ScrollControls />
 
       <main className="relative z-10 px-3 pb-10 pt-2 md:px-5 md:pb-16 md:pt-3">
         {children}
