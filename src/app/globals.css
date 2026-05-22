@@ -584,3 +584,89 @@ textarea {
     line-height: 1.04;
   }
 }
+/* Step 13 premium gradient hero titles */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-title {
+    background:
+      linear-gradient(
+        112deg,
+        #10261a 0%,
+        #183126 20%,
+        #1f6f47 42%,
+        #7f9189 58%,
+        #143522 78%,
+        #10261a 100%
+      );
+    background-size: 210% 210%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 12px 38px rgba(16, 38, 26, 0.055),
+      0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  @keyframes heroTitleGradientAmbient {
+    0%,
+    100% {
+      background-position: 0% 52%;
+    }
+
+    50% {
+      background-position: 100% 48%;
+    }
+  }
+
+  @keyframes heroTitleGradientScroll {
+    0% {
+      background-position: 0% 52%;
+    }
+
+    100% {
+      background-position: 100% 48%;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-title {
+      animation: heroTitleGradientAmbient 18s ease-in-out infinite;
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-title {
+        animation-name: heroTitleGradientScroll;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: scroll(root);
+        animation-range: 0 70vh;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-title {
+      background:
+        linear-gradient(
+          116deg,
+          #10261a 0%,
+          #183126 35%,
+          #1f6f47 62%,
+          #10261a 100%
+        );
+      background-size: 170% 170%;
+    }
+  }
+}
+
+@media (forced-colors: active) {
+  .hero-title {
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+    background: none;
+  }
+}
+/* End Step 13 premium gradient hero titles */
