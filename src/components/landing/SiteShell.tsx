@@ -64,7 +64,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
 
       <ScrollControls />
 
-      <main className="relative z-10 px-3 pb-10 pt-32 md:px-5 md:pb-16 md:pt-32 xl:pt-28">
+      <main className="relative z-10 px-3 pb-10 pt-36 md:px-5 md:pb-16 md:pt-36 xl:pt-32">
         {children}
       </main>
 
