@@ -149,7 +149,7 @@ export function HomePage() {
               <p className="inline-flex rounded-full bg-[var(--accent-light)] px-3 py-1 text-xs font-semibold text-[var(--accent-dark)]">
                 {page.eyebrow}
               </p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">{page.navLabel}</h3>
+              <h3 className="card-title mt-4 text-[1.35rem] font-semibold tracking-[-0.025em] md:text-[1.45rem]">{page.navLabel}</h3>
               <p className="mt-4 text-base leading-7 text-[var(--muted)]">{page.subtitle}</p>
             </Link>
           ))}

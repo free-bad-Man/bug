@@ -670,3 +670,83 @@ textarea {
   }
 }
 /* End Step 13 premium gradient hero titles */
+/* Step 14 gradient section and card titles */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .section-title {
+    display: inline-block;
+    background:
+      linear-gradient(
+        112deg,
+        #10261a 0%,
+        #183126 22%,
+        #1f6f47 46%,
+        #6f837a 64%,
+        #143522 84%,
+        #10261a 100%
+      );
+    background-size: 190% 190%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 10px 30px rgba(16, 38, 26, 0.05),
+      0 1px 0 rgba(255, 255, 255, 0.16);
+  }
+
+  .card-title {
+    display: inline-block;
+    background:
+      linear-gradient(
+        116deg,
+        #10261a 0%,
+        #183126 34%,
+        #1f6f47 66%,
+        #10261a 100%
+      );
+    background-size: 165% 165%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 6px 20px rgba(16, 38, 26, 0.035);
+  }
+
+  @keyframes sectionTitleGradientAmbient {
+    0%,
+    100% {
+      background-position: 0% 52%;
+    }
+
+    50% {
+      background-position: 100% 48%;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .section-title {
+      animation: sectionTitleGradientAmbient 22s ease-in-out infinite;
+    }
+
+    .card-title {
+      animation: sectionTitleGradientAmbient 26s ease-in-out infinite;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .section-title,
+    .card-title {
+      background-size: 145% 145%;
+    }
+  }
+}
+
+@media (forced-colors: active) {
+  .section-title,
+  .card-title {
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+    background: none;
+  }
+}
+/* End Step 14 gradient section and card titles */
