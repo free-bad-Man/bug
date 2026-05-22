@@ -937,3 +937,102 @@ textarea {
   }
 }
 /* End Step 17 fixed header scrim and boundary */
+/* Step 18 license document preview */
+.document-preview {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.22));
+  box-shadow:
+    0 18px 46px rgba(18, 32, 24, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(16px) saturate(1.08);
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.document-preview:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 22px 54px rgba(18, 32, 24, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.48);
+}
+
+.document-preview::after {
+  content: "PDF";
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: rgba(16, 38, 26, 0.82);
+  padding: 0.35rem 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.document-preview__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 680px;
+  object-fit: contain;
+  object-position: top center;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.document-meta {
+  color: rgba(24, 49, 38, 0.82);
+}
+
+.document-meta div {
+  display: grid;
+  gap: 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.46);
+  padding-bottom: 0.75rem;
+}
+
+.document-meta dt {
+  color: rgba(21, 95, 59, 0.84);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.document-meta dd {
+  margin: 0;
+  color: rgba(16, 38, 26, 0.86);
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+@media (max-width: 1023px) {
+  .document-preview__image {
+    max-height: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .document-preview {
+    border-radius: 1rem;
+  }
+
+  .document-preview__image {
+    max-height: 430px;
+  }
+
+  .document-meta dd {
+    font-size: 0.9rem;
+  }
+}
+/* End Step 18 license document preview */
