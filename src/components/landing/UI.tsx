@@ -18,7 +18,7 @@ export function Section({ eyebrow, title, text, children, id }: SectionProps) {
               {eyebrow}
             </p>
           ) : null}
-          <h2 className="mt-3 text-balance text-3xl font-semibold leading-[1.04] tracking-[-0.04em] md:text-5xl">
+          <h2 className="section-title mt-3 text-balance text-3xl font-semibold leading-[1.08] tracking-[-0.035em] md:text-[2.65rem]">
             {title}
           </h2>
           {text ? (
@@ -53,7 +53,7 @@ export function GlassCard({
           {label}
         </p>
       ) : null}
-      <h3 className="mt-4 text-2xl font-semibold leading-[1.16] tracking-[-0.03em]">
+      <h3 className="card-title mt-4 text-[1.35rem] font-semibold leading-[1.18] tracking-[-0.025em] md:text-[1.45rem]">
         {title}
       </h3>
       <p className="mt-4 text-base leading-7 text-[var(--muted)]">{text}</p>
@@ -94,7 +94,7 @@ export function ProcessStep({
       <p className="glass-button inline-flex h-10 w-10 items-center justify-center rounded-2xl text-sm font-semibold">
         {number}
       </p>
-      <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">{title}</h3>
+      <h3 className="card-title mt-4 text-[1.35rem] font-semibold tracking-[-0.025em] md:text-[1.45rem]">{title}</h3>
       <p className="mt-3 text-base leading-7 text-[var(--muted)]">{text}</p>
     </article>
   );

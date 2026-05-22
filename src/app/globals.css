@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --text: #122018;
-  --text-soft: rgba(18, 32, 24, 0.82);
-  --muted: #5d6f63;
+  --text: #183126;
+  --text-soft: rgba(24, 49, 38, 0.76);
+  --muted: #637468;
   --accent: #1f7a4d;
   --accent-dark: #155f3b;
   --accent-light: #e4f6eb;
@@ -28,7 +28,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif;
   background: #eef5f0;
   text-rendering: geometricPrecision;
 }
@@ -543,5 +543,44 @@ textarea {
   .site-header__phone {
     padding-left: 0.68rem;
     padding-right: 0.68rem;
+  }
+}
+/* Step 12 soft premium typography */
+.hero-title {
+  color: rgba(16, 38, 26, 0.9);
+  font-weight: 600;
+  letter-spacing: -0.047em;
+  line-height: 1.01;
+  text-shadow: 0 10px 36px rgba(16, 38, 26, 0.06);
+}
+
+.section-title {
+  color: rgba(16, 38, 26, 0.9);
+  font-weight: 600;
+  text-shadow: 0 8px 28px rgba(16, 38, 26, 0.045);
+}
+
+.card-title {
+  color: rgba(16, 38, 26, 0.91);
+  font-weight: 600;
+}
+
+.hero-card p,
+.glass p,
+.glass-soft p {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 1280px) {
+  .hero-title {
+    max-width: 980px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    letter-spacing: -0.038em;
+    line-height: 1.04;
   }
 }
