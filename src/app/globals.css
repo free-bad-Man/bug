@@ -1036,3 +1036,59 @@ textarea {
   }
 }
 /* End Step 18 license document preview */
+/* Step 19 strengthen license page */
+.document-flow {
+  display: grid;
+  gap: 1rem;
+}
+
+.document-flow__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+}
+
+.document-flow__item::after {
+  content: "";
+  position: absolute;
+  inset: auto -12% -42% 48%;
+  height: 160px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(31, 122, 77, 0.08), transparent 68%);
+}
+
+.document-flow__number {
+  display: inline-flex;
+  width: 2.7rem;
+  height: 2.7rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 1rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(226, 232, 228, 0.3));
+  color: rgba(16, 38, 26, 0.82);
+  box-shadow:
+    0 14px 32px rgba(18, 32, 24, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .document-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1180px) {
+  .document-flow {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .document-flow__item {
+    min-height: 235px;
+  }
+}
+/* End Step 19 strengthen license page */

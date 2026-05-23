@@ -1,7 +1,6 @@
 import { documents } from '@/shared/data/site';
 import { SiteShell } from './SiteShell';
 import { CardGrid, GlassCard, Section } from './UI';
-import { LeadForm } from './LeadForm';
 
 const licenseDocuments = [
   {
@@ -10,15 +9,76 @@ const licenseDocuments = [
     number: '78.01.01.003.Л.000006.01.26',
     erul: 'ЕРУЛ № Л064-00111-78/04225362',
     date: '26.01.2026',
+    order: 'Приказ № 15 от 26.01.2026',
     authority:
       'Межрегиональное управление Роспотребнадзора по городу Санкт-Петербург и Ленинградской области',
     holder: 'ИП Гордеев Тимофей Павлович',
+    address: '299055, г. Севастополь, ул. Генерала Хрюкина, 10',
     activity:
       'Дезинфекция, дезинсекция и дератизация в целях санитарно-эпидемиологического благополучия населения.',
     works: ['Дератизация', 'Дезинсекция', 'Дезинфекция'],
     pdfHref: '/docs/license-extract-78-01-01-003-l-000006-01-26.pdf',
     previewSrc: '/docs/license-extract-78-01-01-003-l-000006-01-26-preview.png',
   },
+];
+
+const trustItems = [
+  {
+    title: 'Легальный допуск',
+    text: 'Клиент видит не обещание на словах, а конкретную выписку из реестра лицензий с номером, датой и статусом.',
+  },
+  {
+    title: 'Профильные работы',
+    text: 'Документ закрывает ключевые направления проекта: дератизацию, дезинсекцию и дезинфекцию.',
+  },
+  {
+    title: 'Адрес осуществления деятельности',
+    text: 'В выписке указан адрес места осуществления лицензируемого вида деятельности в Севастополе.',
+  },
+];
+
+const allowedWorks = [
+  {
+    title: 'Дезинсекция',
+    text: 'Работы против насекомых и профилактика рисков для гостиниц, общепита, складов и сезонных объектов.',
+  },
+  {
+    title: 'Дератизация',
+    text: 'Контроль грызунов, внешний контур, складские, разгрузочные, технические и пищевые зоны.',
+  },
+  {
+    title: 'Дезинфекция',
+    text: 'Профильные мероприятия санитарной обработки в рамках лицензируемого вида деятельности.',
+  },
+];
+
+const clientDocumentFlow = [
+  {
+    title: 'Лицензия',
+    text: 'Подтверждает допуск к профильным работам и снимает вопрос легальности подрядчика.',
+  },
+  {
+    title: 'Договор',
+    text: 'Фиксирует объект, формат обслуживания, график, зоны ответственности и порядок взаимодействия.',
+  },
+  {
+    title: 'Акты',
+    text: 'Закрывающие документы по выполненным работам для бухгалтерии, управляющего и проверяющих.',
+  },
+  {
+    title: 'Журнал работ',
+    text: 'История визитов, отметки по объекту, критические зоны и регулярность санитарного контроля.',
+  },
+  {
+    title: 'Регламент',
+    text: 'Порядок подготовки объекта, ограничения, рекомендации и действия ответственных лиц.',
+  },
+];
+
+const b2bReasons = [
+  'Для гостиниц и гостевых домов документальная база важна при запуске сезона и работе с гостями.',
+  'Для общепита и складов документы помогают поддерживать управляемый санитарный режим.',
+  'Для управляющих компаний и коммерческих объектов лицензия снижает риск работы с случайным подрядчиком.',
 ];
 
 export function DocumentsPage() {
@@ -33,7 +93,7 @@ export function DocumentsPage() {
             {documents.title}
           </h1>
           <p className="mt-6 max-w-3xl text-lg font-medium leading-8 text-[var(--text-soft)] md:text-xl md:leading-9">
-            {documents.subtitle}
+            Лицензии, выписки, договорные документы, акты и журналы работ — всё, что помогает клиенту убедиться в легальности подрядчика и прозрачности санитарного сопровождения.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
@@ -43,17 +103,17 @@ export function DocumentsPage() {
               Смотреть лицензии
             </a>
             <a
-              href="#lead"
+              href="#document-flow"
               className="glass-button inline-flex min-h-12 items-center justify-center rounded-2xl px-6 text-sm font-semibold transition"
             >
-              Запросить пакет
+              Документы по работам
             </a>
           </div>
         </div>
 
         <div className="glass w-full rounded-[1.75rem] p-4 md:rounded-[2.05rem] md:p-5 lg:p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-dark)] md:text-sm">
-            Что будет в разделе
+            Документальный центр
           </p>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
             {documents.bullets.map((item) => (
@@ -69,7 +129,7 @@ export function DocumentsPage() {
         id="licenses"
         eyebrow="Лицензия"
         title="Документальное подтверждение допуска к работам"
-        text="В разделе размещаем реальные документы с визуальным предпросмотром: клиент сразу видит документ, реквизиты и может открыть или скачать PDF."
+        text="Раздел показывает реальные документы с визуальным предпросмотром: клиент сразу видит выписку, основные реквизиты и может открыть или скачать PDF."
       >
         <div className="grid gap-5">
           {licenseDocuments.map((item) => (
@@ -112,8 +172,16 @@ export function DocumentsPage() {
                       <dd>{item.date}</dd>
                     </div>
                     <div>
+                      <dt>Приказ</dt>
+                      <dd>{item.order}</dd>
+                    </div>
+                    <div>
                       <dt>Лицензиат</dt>
                       <dd>{item.holder}</dd>
+                    </div>
+                    <div>
+                      <dt>Адрес деятельности</dt>
+                      <dd>{item.address}</dd>
                     </div>
                     <div>
                       <dt>Лицензирующий орган</dt>
@@ -152,7 +220,7 @@ export function DocumentsPage() {
                   </div>
 
                   <p className="mt-4 text-sm leading-6 text-[var(--muted)]">
-                    Предпросмотр показывает первую страницу документа. Полная версия открывается по кнопке PDF.
+                    Выписка носит информационный характер: после её составления в реестр лицензий могли быть внесены изменения. Актуальность документа проверяется по действующему реестру.
                   </p>
                 </div>
               </div>
@@ -162,36 +230,62 @@ export function DocumentsPage() {
       </Section>
 
       <Section
-        id="documents"
-        eyebrow="Документальная база"
-        title="Пакет документов для клиента и проверяющих"
-        text="Кроме лицензии, в этом разделе можно размещать договоры, приложения, регламенты, акты, журналы работ и инструкции для ответственных лиц клиента."
+        eyebrow="Что подтверждает"
+        title="Лицензия закрывает главный вопрос доверия"
+        text="Для B2B-клиента важно понимать, что подрядчик работает не как случайный исполнитель, а как лицензированный участник санитарного процесса."
       >
         <CardGrid>
-          {documents.items.map((item) => (
-            <GlassCard
-              key={item.title}
-              title={item.title}
-              text={item.text}
-              label={item.status}
-            />
+          {trustItems.map((item) => (
+            <GlassCard key={item.title} title={item.title} text={item.text} />
           ))}
         </CardGrid>
       </Section>
 
       <Section
-        eyebrow="Важно"
-        title="Документы должны быть актуальными"
-        text="Перед публикацией новых сканов и номеров документов нужно проверять сроки действия, реквизиты компании и состав работ, которые закрывает каждый документ."
-      />
+        eyebrow="Разрешённые работы"
+        title="Направления, указанные в лицензии"
+        text="На странице отдельно показываем не только сам PDF, но и понятную расшифровку работ, которые входят в профиль санитарной службы."
+      >
+        <CardGrid>
+          {allowedWorks.map((item) => (
+            <GlassCard key={item.title} title={item.title} text={item.text} />
+          ))}
+        </CardGrid>
+      </Section>
 
       <Section
-        id="lead"
-        eyebrow="Запрос"
-        title="Запросить пакет документов под объект"
-        text="Для B2B-клиентов можно подготовить договор, приложения, график визитов, акты и перечень документов, которые будут сопровождать работы."
+        id="document-flow"
+        eyebrow="Документы после работ"
+        title="Клиенту нужен не только выезд, но и документальный след"
+        text="Для коммерческого объекта важно заранее понимать, какие документы будут сопровождать санитарные работы и кто отвечает за контроль."
       >
-        <LeadForm />
+        <div className="document-flow">
+          {clientDocumentFlow.map((item, index) => (
+            <article key={item.title} className="document-flow__item glass-soft">
+              <p className="document-flow__number">{String(index + 1).padStart(2, '0')}</p>
+              <h3 className="card-title mt-4 text-[1.25rem] font-semibold tracking-[-0.025em] md:text-[1.35rem]">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)] md:text-base md:leading-7">
+                {item.text}
+              </p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Почему это важно для B2B"
+        title="Документы снижают управленческий риск"
+        text="Когда объект работает с гостями, продуктами, хранением или сезонным потоком, санитарное сопровождение должно быть подтверждено документально."
+      >
+        <div className="grid gap-3">
+          {b2bReasons.map((item) => (
+            <div key={item} className="glass-soft rounded-3xl px-5 py-4 text-base font-medium leading-7 text-[var(--text-soft)]">
+              {item}
+            </div>
+          ))}
+        </div>
       </Section>
     </SiteShell>
   );
