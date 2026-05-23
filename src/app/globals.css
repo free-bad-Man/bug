@@ -1258,3 +1258,209 @@ textarea {
   }
 }
 /* End Step 21 mobile hotfix */
+/* Step 22 mobile burger header */
+.mobile-burger {
+  position: relative;
+  display: none;
+  flex: 0 0 auto;
+}
+
+.mobile-burger__button {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  border-radius: 1.1rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(226, 232, 228, 0.34));
+  color: rgba(16, 38, 26, 0.88);
+  box-shadow:
+    0 14px 34px rgba(18, 32, 24, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  cursor: pointer;
+}
+
+.mobile-burger__button span {
+  width: 17px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(16, 38, 26, 0.78);
+}
+
+.mobile-burger__button:focus-visible {
+  outline: 2px solid rgba(31, 122, 77, 0.5);
+  outline-offset: 3px;
+}
+
+.mobile-burger__panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(288px, calc(100vw - 28px));
+  display: grid;
+  gap: 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(239, 245, 241, 0.72));
+  box-shadow:
+    0 24px 64px rgba(18, 32, 24, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56);
+  padding: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px) scale(0.98);
+  transition: opacity 160ms ease, transform 160ms ease;
+  backdrop-filter: blur(24px) saturate(1.12);
+  -webkit-backdrop-filter: blur(24px) saturate(1.12);
+}
+
+.mobile-burger__panel--open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.mobile-burger__nav {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.mobile-burger__link,
+.mobile-burger__phone {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.42);
+  color: rgba(16, 38, 26, 0.84);
+  padding: 0.78rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.mobile-burger__link::after {
+  content: "›";
+  color: rgba(31, 122, 77, 0.56);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.mobile-burger__phone {
+  justify-content: center;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgba(226, 232, 228, 0.38));
+  color: rgba(16, 38, 26, 0.9);
+}
+
+@media (max-width: 1199px) {
+  .mobile-burger {
+    display: block;
+  }
+
+  .site-header__phone {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    padding: 0.55rem 0.55rem 0.45rem;
+  }
+
+  .site-header__inner {
+    padding: 0.62rem 0.68rem;
+  }
+
+  .site-header__row {
+    min-height: 46px;
+    align-items: center;
+  }
+
+  .brand {
+    max-width: calc(100vw - 86px);
+    gap: 0.55rem;
+  }
+
+  .brand__mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand__text {
+    gap: 0.16rem;
+    line-height: 1.05;
+  }
+
+  .brand__title {
+    max-width: none;
+    font-size: 15px;
+    font-weight: 750;
+  }
+
+  .brand__subtitle {
+    display: block !important;
+    max-width: calc(100vw - 150px);
+    margin-top: 0;
+    color: rgba(16, 38, 26, 0.56);
+    font-size: 9.5px;
+    font-weight: 550;
+    line-height: 1.12;
+    white-space: normal;
+  }
+
+  .mobile-scroll {
+    display: none !important;
+  }
+
+  .mobile-burger__button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-burger__panel {
+    top: calc(100% + 14px);
+  }
+}
+
+@media (max-width: 390px) {
+  .brand {
+    max-width: calc(100vw - 78px);
+    gap: 0.45rem;
+  }
+
+  .brand__mark {
+    width: 37px;
+    height: 37px;
+  }
+
+  .brand__title {
+    font-size: 14px;
+  }
+
+  .brand__subtitle {
+    max-width: calc(100vw - 138px);
+    font-size: 9px;
+  }
+
+  .mobile-burger__button {
+    width: 39px;
+    height: 39px;
+    border-radius: 1rem;
+  }
+
+  .mobile-burger__panel {
+    width: min(280px, calc(100vw - 22px));
+  }
+}
+/* End Step 22 mobile burger header */

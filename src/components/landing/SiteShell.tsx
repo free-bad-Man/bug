@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { company, nav } from '@/shared/data/site';
+import { MobileMenu } from './MobileMenu';
 import { ScrollControls } from './ScrollControls';
 
 type SiteShellProps = {
@@ -46,19 +47,9 @@ export function SiteShell({ background, children }: SiteShellProps) {
             >
               Позвонить
             </a>
-          </div>
 
-          <nav className="mobile-scroll -mx-1 mt-2.5 flex gap-2 overflow-x-auto pb-1 xl:hidden">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="shrink-0 rounded-2xl border border-white/45 bg-white/30 px-3.5 py-2 text-xs font-medium text-[var(--text)]/78 transition hover:bg-white/58 hover:text-[var(--accent-dark)]"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+            <MobileMenu />
+          </div>
         </div>
       </header>
 
