@@ -1092,3 +1092,169 @@ textarea {
   }
 }
 /* End Step 19 strengthen license page */
+/* Step 21 mobile hotfix */
+@media (max-width: 767px) {
+  .site-header {
+    padding: 0.55rem 0.55rem 0.45rem;
+  }
+
+  .site-header::before {
+    inset-bottom: -10px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247, 251, 248, 0.94) 0%,
+        rgba(247, 251, 248, 0.78) 64%,
+        rgba(247, 251, 248, 0) 100%
+      );
+  }
+
+  .site-header__inner {
+    border-radius: 1.35rem;
+    padding: 0.58rem 0.62rem;
+  }
+
+  .site-header__row {
+    min-height: 36px;
+    gap: 0.5rem;
+  }
+
+  .brand {
+    max-width: calc(100vw - 138px);
+    gap: 0.45rem;
+  }
+
+  .brand__mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand__title {
+    max-width: 178px;
+    font-size: 13.5px;
+    line-height: 1.05;
+  }
+
+  .brand__subtitle {
+    display: none;
+  }
+
+  .site-header__phone {
+    min-height: 38px;
+    border-radius: 1rem;
+    padding: 0.52rem 0.72rem;
+    font-size: 0.78rem;
+  }
+
+  .mobile-scroll {
+    margin-top: 0.62rem;
+    gap: 0.45rem;
+    padding-bottom: 0.15rem;
+  }
+
+  .mobile-scroll a {
+    border-radius: 1rem;
+    padding: 0.62rem 0.84rem;
+    font-size: 0.82rem;
+  }
+
+  main {
+    overflow-x: clip;
+  }
+
+  .hero-card {
+    border-radius: 1.55rem !important;
+    padding: 1.45rem 1.25rem !important;
+  }
+
+  .hero-card > p:first-child {
+    max-width: 100%;
+    border-radius: 1rem;
+    padding: 0.62rem 0.78rem;
+    font-size: 0.72rem !important;
+    line-height: 1.45;
+    letter-spacing: 0.12em !important;
+    white-space: normal;
+  }
+
+  .hero-title {
+    max-width: 100% !important;
+    margin-top: 1.35rem !important;
+    background: none !important;
+    background-image: none !important;
+    color: rgba(24, 49, 38, 0.9) !important;
+    -webkit-text-fill-color: rgba(24, 49, 38, 0.9) !important;
+    font-size: clamp(2.15rem, 10.3vw, 3rem) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.045em !important;
+    line-height: 1.04 !important;
+    text-shadow: 0 8px 24px rgba(16, 38, 26, 0.05) !important;
+    animation: none !important;
+  }
+
+  .hero-card .hero-title + p,
+  .hero-card p.mt-6 {
+    margin-top: 1.2rem !important;
+    font-size: 1.08rem !important;
+    line-height: 1.75 !important;
+  }
+
+  .hero-card .mt-7 {
+    margin-top: 1.35rem !important;
+  }
+
+  .hero-card .glass-button,
+  .hero-card .glass-button-strong {
+    width: 100%;
+    min-height: 3.05rem;
+  }
+
+  .hero-card .grid {
+    gap: 0.75rem;
+  }
+
+  .scroll-controls {
+    left: 8px;
+    top: auto;
+    bottom: 76px;
+    gap: 0.4rem;
+    transform: none;
+  }
+
+  .scroll-control {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    opacity: 0.68;
+  }
+
+  .scroll-control:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand__title {
+    max-width: 150px;
+  }
+
+  .site-header__phone {
+    padding-left: 0.62rem;
+    padding-right: 0.62rem;
+  }
+
+  .mobile-scroll a {
+    padding-left: 0.72rem;
+    padding-right: 0.72rem;
+  }
+
+  .hero-card {
+    padding-left: 1.05rem !important;
+    padding-right: 1.05rem !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 2.65rem) !important;
+  }
+}
+/* End Step 21 mobile hotfix */
