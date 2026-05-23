@@ -1511,3 +1511,168 @@ textarea {
   }
 }
 /* End Step 23 mobile background everywhere */
+/* Step 24 denser glass and silver button animation */
+.glass {
+  border-color: rgba(255, 255, 255, 0.78);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(238, 244, 240, 0.54));
+  box-shadow:
+    0 24px 72px rgba(18, 32, 24, 0.13),
+    0 8px 24px rgba(18, 32, 24, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(25px) saturate(1.13);
+  -webkit-backdrop-filter: blur(25px) saturate(1.13);
+}
+
+.glass-soft {
+  border-color: rgba(255, 255, 255, 0.66);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(239, 245, 241, 0.42));
+  box-shadow:
+    0 18px 46px rgba(18, 32, 24, 0.105),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(21px) saturate(1.1);
+  -webkit-backdrop-filter: blur(21px) saturate(1.1);
+}
+
+.hero-card {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.42) 36%, transparent 72%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(239, 245, 241, 0.55));
+}
+
+.document-card,
+.document-flow__item {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgba(239, 245, 241, 0.48));
+}
+
+.glass-button,
+.glass-button-strong,
+.mobile-burger__button,
+.mobile-burger__link,
+.mobile-burger__phone,
+.scroll-control {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.glass-button,
+.glass-button-strong {
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(218, 226, 222, 0.48) 42%, rgba(255, 255, 255, 0.58) 100%);
+  color: rgba(16, 38, 26, 0.88);
+  box-shadow:
+    0 14px 36px rgba(18, 32, 24, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.64),
+    inset 0 -1px 0 rgba(112, 126, 118, 0.12);
+  backdrop-filter: blur(18px) saturate(1.12);
+  -webkit-backdrop-filter: blur(18px) saturate(1.12);
+}
+
+.glass-button-strong {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(207, 218, 213, 0.54) 38%, rgba(246, 249, 247, 0.72) 100%);
+  box-shadow:
+    0 18px 44px rgba(18, 32, 24, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 rgba(31, 122, 77, 0.08);
+}
+
+.glass-button::before,
+.glass-button-strong::before,
+.mobile-burger__button::before,
+.scroll-control::before {
+  content: "";
+  position: absolute;
+  inset: -55% auto -55% -90%;
+  z-index: -1;
+  width: 74%;
+  transform: skewX(-18deg);
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.22) 28%,
+      rgba(255, 255, 255, 0.72) 50%,
+      rgba(196, 208, 202, 0.26) 68%,
+      transparent 100%
+    );
+  opacity: 0.72;
+}
+
+.glass-button:hover,
+.glass-button-strong:hover {
+  border-color: rgba(255, 255, 255, 0.9);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(218, 226, 222, 0.58) 42%, rgba(255, 255, 255, 0.72) 100%);
+  box-shadow:
+    0 20px 52px rgba(18, 32, 24, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76),
+    inset 0 -1px 0 rgba(112, 126, 118, 0.14);
+}
+
+@keyframes silverButtonSheen {
+  0% {
+    transform: translateX(0) skewX(-18deg);
+  }
+
+  42%,
+  100% {
+    transform: translateX(285%) skewX(-18deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .glass-button::before,
+  .glass-button-strong::before,
+  .mobile-burger__button::before,
+  .scroll-control::before {
+    animation: silverButtonSheen 5.8s ease-in-out infinite;
+  }
+
+  .glass-button-strong::before {
+    animation-delay: 0.7s;
+  }
+
+  .mobile-burger__button::before,
+  .scroll-control::before {
+    animation-duration: 6.8s;
+  }
+}
+
+@media (max-width: 767px) {
+  .glass {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(239, 245, 241, 0.6));
+    backdrop-filter: blur(27px) saturate(1.12);
+    -webkit-backdrop-filter: blur(27px) saturate(1.12);
+  }
+
+  .glass-soft {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(239, 245, 241, 0.5));
+    backdrop-filter: blur(23px) saturate(1.1);
+    -webkit-backdrop-filter: blur(23px) saturate(1.1);
+  }
+
+  .hero-card {
+    background:
+      radial-gradient(circle at 16% 10%, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.5) 42%, transparent 74%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(239, 245, 241, 0.62));
+  }
+}
+
+@media (forced-colors: active) {
+  .glass-button::before,
+  .glass-button-strong::before,
+  .mobile-burger__button::before,
+  .scroll-control::before {
+    display: none;
+  }
+}
+/* End Step 24 denser glass and silver button animation */
