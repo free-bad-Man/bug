@@ -14,8 +14,12 @@ export function SiteShell({ background, children }: SiteShellProps) {
     <div className="page-shell relative min-h-screen overflow-hidden">
       <div
         aria-hidden="true"
-        className="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat"
+        className="site-bg site-bg--desktop fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${background})` }}
+      />
+      <div
+        aria-hidden="true"
+        className="site-bg site-bg--mobile fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat"
       />
 
       <header className="site-header fixed left-0 right-0 top-0 z-40 px-3 py-3 md:px-5 md:py-4">
