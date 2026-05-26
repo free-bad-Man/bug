@@ -9,6 +9,13 @@ type SiteShellProps = {
   children: ReactNode;
 };
 
+const footerSocials = [
+  { label: 'Telegram', short: 'TG' },
+  { label: 'ВКонтакте', short: 'VK' },
+  { label: 'Яндекс Бизнес', short: 'ЯБ' },
+  { label: 'Электронная почта', short: '@' },
+];
+
 export function SiteShell({ background, children }: SiteShellProps) {
   return (
     <div className="page-shell relative min-h-screen overflow-hidden">
@@ -45,12 +52,12 @@ export function SiteShell({ background, children }: SiteShellProps) {
               ))}
             </nav>
 
-            <a
-              href={company.phoneHref}
+            <Link
+              href="/kontakty/"
               className="glass-button-strong site-header__phone shrink-0 rounded-2xl px-4 py-2 text-sm font-semibold transition"
             >
-              Позвонить
-            </a>
+              Контакты
+            </Link>
 
             <MobileMenu />
           </div>
@@ -73,10 +80,23 @@ export function SiteShell({ background, children }: SiteShellProps) {
             </span>
           </Link>
 
-          <div className="flex flex-wrap gap-3">
-            <a className="glass-button rounded-2xl px-4 py-2 transition" href={company.phoneHref}>
-              {company.phone}
-            </a>
+          <div className="footer-actions">
+            <Link className="footer-privacy glass-button rounded-2xl px-4 py-2 transition" href="/politika-konfidentsialnosti/">
+              Политика конфиденциальности
+            </Link>
+
+            <div className="footer-socials" aria-label="Каналы связи будут добавлены позже">
+              {footerSocials.map((item) => (
+                <span
+                  key={item.label}
+                  className="footer-socials__item"
+                  title={`${item.label} будет подключён позже`}
+                  aria-label={`${item.label} будет подключён позже`}
+                >
+                  {item.short}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </footer>

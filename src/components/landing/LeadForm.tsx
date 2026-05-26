@@ -7,7 +7,7 @@ export function LeadForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus('Заявка пока не отправляется в CRM: это чистый статичный каркас. Следующим шагом подключим обработчик формы.');
+    setStatus('Контактный канал для отправки заявки будет добавлен после утверждения телефона или почты. Пока форма помогает собрать данные для предварительного расчёта.');
   }
 
   return (
@@ -66,7 +66,7 @@ export function LeadForm() {
       </label>
 
       <button className="glass-button-strong min-h-12 rounded-2xl px-6 font-semibold transition">
-        Получить расчёт
+        Подготовить данные для расчёта
       </button>
 
       {status ? (

@@ -28,6 +28,11 @@ const staticRoutes: RouteEntry[] = [
     priority: 0.7,
     changeFrequency: 'monthly',
   },
+  {
+    path: '/politika-konfidentsialnosti/',
+    priority: 0.4,
+    changeFrequency: 'yearly',
+  },
 ];
 
 function normalizePath(path: string) {

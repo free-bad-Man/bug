@@ -22,7 +22,7 @@ export function SectionPage({ page }: { page: LandingPageData }) {
               href="#lead"
               className="glass-button-strong inline-flex min-h-12 items-center justify-center rounded-2xl px-6 text-sm font-semibold transition"
             >
-              Получить расчёт
+              Подготовить расчёт
             </a>
             <a
               href="#details"
@@ -64,8 +64,8 @@ export function SectionPage({ page }: { page: LandingPageData }) {
       <Section
         id="lead"
         eyebrow="Расчёт"
-        title="Запросить предварительный диапазон"
-        text="Опишите объект, город, площадь, зоны риска и срочность. Следующим шагом подключим отправку в CRM."
+        title="Подготовить данные для предварительного диапазона"
+        text="Для расчёта нужны город, тип объекта, площадь, зоны риска, формат работ и срочность. Эти данные помогут быстрее определить подходящий режим сопровождения."
       >
         <LeadForm />
       </Section>

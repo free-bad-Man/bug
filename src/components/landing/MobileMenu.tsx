@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { company, nav } from '@/shared/data/site';
+import { nav } from '@/shared/data/site';
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,9 +38,9 @@ export function MobileMenu() {
           ))}
         </nav>
 
-        <a className="mobile-burger__phone" href={company.phoneHref} onClick={closeMenu}>
-          Позвонить
-        </a>
+        <Link className="mobile-burger__phone" href="/kontakty/" onClick={closeMenu}>
+          Контакты
+        </Link>
       </div>
     </div>
   );
