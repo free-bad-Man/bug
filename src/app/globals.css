@@ -1741,3 +1741,26 @@ textarea {
   }
 }
 /* End Step 26b footer policy and placeholders */
+/* Step 28 home card alignment */
+.glass-soft > .card-title {
+  display: block;
+}
+
+.glass-soft > p.inline-flex + .card-title {
+  margin-top: 1.15rem;
+}
+
+@media (min-width: 1024px) {
+  .glass-soft {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid.xl\:grid-cols-3 > .glass-soft,
+  .grid.xl\:grid-cols-3 > a.glass-soft,
+  .grid.xl\:grid-cols-3 > article.glass-soft {
+    min-height: 238px;
+  }
+}
+/* End Step 28 home card alignment */

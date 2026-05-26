@@ -81,21 +81,17 @@ export function StatCard({
 }
 
 export function ProcessStep({
-  number,
   title,
   text,
 }: {
-  number: string;
+  number?: string;
   title: string;
   text: string;
 }) {
   return (
     <article className="glass-soft rounded-[1.5rem] p-5 md:p-6">
-      <p className="glass-button inline-flex h-10 w-10 items-center justify-center rounded-2xl text-sm font-semibold">
-        {number}
-      </p>
-      <h3 className="card-title mt-4 text-[1.35rem] font-semibold tracking-[-0.025em] md:text-[1.45rem]">{title}</h3>
-      <p className="mt-3 text-base leading-7 text-[var(--muted)]">{text}</p>
+      <h3 className="card-title text-[1.35rem] font-semibold leading-[1.18] tracking-[-0.025em] md:text-[1.45rem]">{title}</h3>
+      <p className="mt-4 text-base leading-7 text-[var(--muted)]">{text}</p>
     </article>
   );
 }
