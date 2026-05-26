@@ -34,6 +34,22 @@ const processItems = [
   },
 ];
 
+const directionItems = [
+  ...pages,
+  {
+    href: '/litsenzii/',
+    eyebrow: 'Документы и допуск',
+    navLabel: 'Лицензии',
+    subtitle: 'Выписки, лицензии и документы, которые подтверждают право выполнять санитарные работы и сопровождать B2B-объекты.',
+  },
+  {
+    href: '/kontakty/',
+    eyebrow: 'Расчёт и обращение',
+    navLabel: 'Контакты',
+    subtitle: 'Раздел для подготовки вводных по объекту: город, площадь, зоны риска, срочность и формат санитарного сопровождения.',
+  },
+];
+
 const benefitItems = [
   {
     title: 'Не продаём хаотичный разовый выезд — выстраиваем режим контроля',
@@ -167,10 +183,10 @@ export function HomePage() {
       <Section
         eyebrow="Разделы"
         title="Основные направления"
-        text="Разделы помогают быстро выбрать нужный сценарий: подготовка объекта, борьба с насекомыми, контроль грызунов, сопровождение общепита и складов."
+        text="Разделы помогают быстро выбрать нужный сценарий: запуск и сопровождение объекта, дезинсекция, дератизация, общепит и склады, документы и обращение за расчётом."
       >
         <CardGrid>
-          {pages.map((page) => (
+          {directionItems.map((page) => (
             <Link key={page.href} href={page.href} className="glass-soft rounded-[1.5rem] p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/46 md:rounded-[1.75rem] md:p-6">
               <p className="inline-flex rounded-full bg-[var(--accent-light)] px-3 py-1 text-xs font-semibold text-[var(--accent-dark)]">
                 {page.eyebrow}
