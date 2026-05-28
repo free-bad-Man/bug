@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { FaTelegramPlane, FaVk, FaYandex } from 'react-icons/fa';
+import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
 import { company, nav } from '@/shared/data/site';
 import { MobileMenu } from './MobileMenu';
 import { ScrollControls } from './ScrollControls';
@@ -9,11 +11,14 @@ type SiteShellProps = {
   children: ReactNode;
 };
 
-const footerSocials = [
-  { label: 'Telegram', short: 'TG' },
-  { label: 'ВКонтакте', short: 'VK' },
-  { label: 'Яндекс Бизнес', short: 'ЯБ' },
-  { label: 'Электронная почта', short: '@' },
+const footerAddress = '299055, г. Севастополь, ул. Генерала Хрюкина, 10';
+const footerPhone = '+7 (000) 000-00-00';
+
+const footerSocials: Array<{ label: string; icon: ReactNode }> = [
+  { label: 'Telegram', icon: <FaTelegramPlane aria-hidden="true" /> },
+  { label: 'ВКонтакте', icon: <FaVk aria-hidden="true" /> },
+  { label: 'Яндекс Бизнес', icon: <FaYandex aria-hidden="true" /> },
+  { label: 'Электронная почта', icon: <MdEmail aria-hidden="true" /> },
 ];
 
 export function SiteShell({ background, children }: SiteShellProps) {
@@ -52,7 +57,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
               ))}
             </nav>
 
-                        <Link
+            <Link
               href="/#lead"
               className="glass-button-strong site-header__phone shrink-0 rounded-2xl px-4 py-2 text-sm font-semibold transition"
             >
@@ -70,30 +75,57 @@ export function SiteShell({ background, children }: SiteShellProps) {
         {children}
       </main>
 
-      <footer className="px-3 pb-4 md:px-5 md:pb-6">
-        <div className="glass mx-auto flex max-w-7xl flex-col gap-5 rounded-[1.7rem] px-5 py-5 text-sm font-medium text-[var(--muted)] md:flex-row md:items-center md:justify-between md:rounded-[2rem]">
-          <Link href="/" className="footer-brand" aria-label={company.name}>
-            <img className="footer-brand__mark" src="/images/logo-mark.png" alt="" aria-hidden="true" />
-            <span className="footer-brand__text">
-              <span className="font-semibold text-[var(--text)]">© {company.name}</span>
-              <span className="mt-1 block">Севастополь и Крым. Санитарная подготовка объектов.</span>
-            </span>
-          </Link>
+      <footer className="site-footer">
+        <div className="site-footer__inner glass">
+          <div className="site-footer__brand-block">
+            <Link href="/" className="footer-brand footer-brand--large" aria-label={company.name}>
+              <img className="footer-brand__mark" src="/images/logo-mark.png" alt="" aria-hidden="true" />
+              <span className="footer-brand__text">
+                <span className="footer-brand__title">© {company.name}</span>
+                <span className="footer-brand__subtitle">{company.descriptor}</span>
+              </span>
+            </Link>
+            <p className="site-footer__note">
+              Санитарная подготовка, дезинсекция, дератизация и сопровождение коммерческих объектов Крыма.
+            </p>
+          </div>
 
-          <div className="footer-actions">
+          <div className="site-footer__contacts" aria-label="Контактная информация">
+            <div className="site-footer__contact-card">
+              <span className="site-footer__contact-icon" aria-hidden="true">
+                <MdLocationOn />
+              </span>
+              <span className="site-footer__contact-text">
+                <span className="site-footer__contact-label">Адрес деятельности</span>
+                <span className="site-footer__contact-value">{footerAddress}</span>
+              </span>
+            </div>
+
+            <div className="site-footer__contact-card">
+              <span className="site-footer__contact-icon" aria-hidden="true">
+                <MdPhone />
+              </span>
+              <span className="site-footer__contact-text">
+                <span className="site-footer__contact-label">Телефон</span>
+                <span className="site-footer__contact-value">{footerPhone}</span>
+              </span>
+            </div>
+          </div>
+
+          <div className="site-footer__right">
             <Link className="footer-privacy glass-button rounded-2xl px-4 py-2 transition" href="/politika-konfidentsialnosti/">
               Политика конфиденциальности
             </Link>
 
-            <div className="footer-socials" aria-label="Каналы связи будут добавлены позже">
+            <div className="footer-socials" aria-label="Социальные и контактные каналы">
               {footerSocials.map((item) => (
                 <span
                   key={item.label}
                   className="footer-socials__item"
-                  title={`${item.label} будет подключён позже`}
-                  aria-label={`${item.label} будет подключён позже`}
+                  title={item.label}
+                  aria-label={item.label}
                 >
-                  {item.short}
+                  {item.icon}
                 </span>
               ))}
             </div>
