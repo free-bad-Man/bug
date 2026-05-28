@@ -2149,3 +2149,150 @@ textarea {
   }
 }
 /* End Step 32 header typography and contacts address */
+/* Step 33b header CTA burgundy titles animation speed */
+:root {
+  --title-burgundy: #5b2130;
+  --title-burgundy-soft: rgba(91, 33, 48, 0.78);
+  --title-burgundy-pale: rgba(91, 33, 48, 0.08);
+}
+
+.hero-title,
+.section-title,
+.card-title,
+.section-eyebrow,
+.card-label,
+.stat-value,
+.hero-card > p:first-child {
+  background: none !important;
+  background-image: none !important;
+  color: var(--title-burgundy) !important;
+  -webkit-text-fill-color: var(--title-burgundy) !important;
+  text-shadow: 0 8px 28px rgba(91, 33, 48, 0.055) !important;
+}
+
+.section-eyebrow,
+.hero-card > p:first-child {
+  color: var(--title-burgundy-soft) !important;
+  -webkit-text-fill-color: var(--title-burgundy-soft) !important;
+}
+
+.card-label {
+  border: 1px solid rgba(91, 33, 48, 0.08);
+  background: linear-gradient(135deg, rgba(91, 33, 48, 0.09), rgba(255, 255, 255, 0.42)) !important;
+}
+
+.site-header__phone {
+  min-width: 176px !important;
+  min-height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+.site-header__phone::before {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+
+.site-header__phone:hover {
+  transform: none !important;
+}
+
+.site-header__inner {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.site-header__row {
+  position: relative;
+  z-index: 2;
+}
+
+.site-header__inner::before {
+  content: "";
+  position: absolute;
+  inset: -80% auto -80% -42%;
+  z-index: 1;
+  width: 32%;
+  pointer-events: none;
+  transform: skewX(-18deg);
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 22%,
+      rgba(255, 255, 255, 0.48) 48%,
+      rgba(196, 208, 202, 0.12) 68%,
+      transparent 100%
+    );
+  opacity: 0.75;
+}
+
+@keyframes headerSilverSheenWide {
+  0% {
+    transform: translateX(0) skewX(-18deg);
+  }
+
+  100% {
+    transform: translateX(470%) skewX(-18deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .site-header__inner::before {
+    animation: headerSilverSheenWide 3.1s ease-in-out infinite;
+  }
+
+  .hero-title {
+    animation-duration: 9s !important;
+  }
+
+  .section-title {
+    animation-duration: 11s !important;
+  }
+
+  .card-title {
+    animation-duration: 13s !important;
+  }
+
+  .glass-button::before,
+  .glass-button-strong::before {
+    animation-duration: 2.9s !important;
+  }
+
+  .mobile-burger__button::before,
+  .scroll-control::before {
+    animation-duration: 3.4s !important;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-title {
+      animation-duration: 0.5s !important;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .site-header__phone {
+    min-width: 150px !important;
+    font-size: 0.86rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header__inner::before {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .mobile-burger__phone {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+/* End Step 33b header CTA burgundy titles animation speed */
