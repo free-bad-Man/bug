@@ -85,6 +85,9 @@ export function SiteShell({ background, children }: SiteShellProps) {
                 <span className="footer-brand__subtitle">{company.descriptor}</span>
               </span>
             </Link>
+            <p className="site-footer__heartline">
+              Чтобы сезон запомнился гостям отдыхом, а вам — спокойной работой без санитарных сюрпризов.
+            </p>
           </div>
 
           <div className="site-footer__contacts site-footer__contacts--stacked" aria-label="Контактная информация">

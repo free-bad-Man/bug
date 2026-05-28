@@ -2910,3 +2910,44 @@ textarea {
   }
 }
 /* End Step 36 final compact footer */
+/* Step 37 footer heartline */
+.site-footer__heartline {
+  max-width: 520px;
+  margin: 1.05rem 0 0;
+  color: rgba(91, 33, 48, 0.82);
+  font-size: clamp(1.08rem, 1.15vw, 1.36rem);
+  font-weight: 620;
+  letter-spacing: -0.025em;
+  line-height: 1.28;
+  text-wrap: balance;
+  text-shadow: 0 10px 28px rgba(91, 33, 48, 0.055);
+}
+
+.site-footer__heartline::before {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 1px;
+  margin-bottom: 0.85rem;
+  background: linear-gradient(90deg, rgba(91, 33, 48, 0.38), rgba(91, 33, 48, 0));
+}
+
+@media (max-width: 1279px) {
+  .site-footer__heartline {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer__heartline {
+    margin-top: 0.85rem;
+    font-size: 1.02rem;
+    line-height: 1.34;
+  }
+
+  .site-footer__heartline::before {
+    width: 58px;
+    margin-bottom: 0.72rem;
+  }
+}
+/* End Step 37 footer heartline */
