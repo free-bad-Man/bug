@@ -17,7 +17,7 @@ export function SectionPage({ page }: { page: LandingPageData }) {
           <p className="mt-6 max-w-3xl text-lg font-medium leading-8 text-[var(--text-soft)] md:text-xl md:leading-9">
             {page.subtitle}
           </p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="hero-actions mt-7 flex w-full max-w-[920px] flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <a
               href="#lead"
               className="glass-button-strong inline-flex min-h-12 items-center justify-center rounded-2xl px-6 text-sm font-semibold transition"
@@ -32,7 +32,7 @@ export function SectionPage({ page }: { page: LandingPageData }) {
             </a>
           </div>
 
-          <div className="mt-7 grid max-w-[920px] gap-3 sm:grid-cols-3">
+          <div className="hero-stats mt-7 grid w-full gap-3 sm:grid-cols-3">
             <StatCard value="объект" label="смотрим тип, площадь, поток и рисковые зоны" />
             <StatCard value="зона" label="учитываем Севастополь, Симферополь, ЮБК и логистику" />
             <StatCard value="режим" label="подбираем запуск, договор, сезон или усиление" />

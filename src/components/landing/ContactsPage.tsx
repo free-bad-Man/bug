@@ -2,6 +2,7 @@ import { home } from '@/shared/data/site';
 import { SiteShell } from './SiteShell';
 import { CardGrid, GlassCard, Section } from './UI';
 import { LeadForm } from './LeadForm';
+import { YandexMap } from './YandexMap';
 
 const contactCards = [
   {
@@ -58,6 +59,14 @@ export function ContactsPage() {
             <GlassCard key={item.title} title={item.title} text={item.text} />
           ))}
         </CardGrid>
+      </Section>
+
+      <Section
+        eyebrow="Карта"
+        title="География выезда"
+        text="Работаем по Севастополю и Крыму. Для расчёта учитываем город, удалённость объекта, площадь, зоны риска и срочность."
+      >
+        <YandexMap />
       </Section>
     </SiteShell>
   );

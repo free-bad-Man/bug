@@ -3,6 +3,7 @@ import { home, pages, prices, products } from '@/shared/data/site';
 import { SiteShell } from './SiteShell';
 import { CardGrid, GlassCard, ProcessStep, Section, StatCard } from './UI';
 import { LeadForm } from './LeadForm';
+import { YandexMap } from './YandexMap';
 
 const painItems = [
   {
@@ -175,7 +176,7 @@ export function HomePage() {
             {home.subtitle}
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="hero-actions mt-7 flex w-full max-w-[920px] flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <a
               href="#lead"
               className="glass-button-strong inline-flex min-h-12 items-center justify-center rounded-2xl px-6 text-sm font-semibold transition"
@@ -190,7 +191,7 @@ export function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-7 grid max-w-[920px] gap-3 sm:grid-cols-3">
+          <div className="hero-stats mt-7 grid w-full gap-3 sm:grid-cols-3">
             <StatCard value="15 мин" label="предварительный расчёт после сбора данных" />
             <StatCard value="B2B" label="гостиницы, общепит, склады и сезонные зоны" />
             <StatCard value="договор" label="акты, журнал, график и зона ответственности" />
@@ -345,6 +346,14 @@ export function HomePage() {
         text="Для расчёта нужны 7 параметров: город, тип объекта, площадь, рисковые зоны, характер задачи, формат работ и срочность."
       >
         <LeadForm />
+      </Section>
+
+      <Section
+        eyebrow="Карта"
+        title="Зона работы"
+        text="Работаем с объектами Севастополя и Крыма. Карта помогает быстро оценить расположение объекта и логистику выезда."
+      >
+        <YandexMap />
       </Section>
     </SiteShell>
   );
