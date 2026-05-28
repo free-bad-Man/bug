@@ -2584,3 +2584,130 @@ textarea {
   }
 }
 /* End Step 34 footer like header contacts icons */
+/* Step 35 recomposed footer layout */
+.site-footer__inner.site-footer__inner--recomposed {
+  grid-template-columns: minmax(320px, 1fr) minmax(340px, 430px);
+  grid-template-areas:
+    "brand contacts"
+    "bottom bottom";
+  min-height: 220px;
+  align-items: center;
+  gap: 1.25rem 1.6rem;
+  padding: 1.55rem 1.7rem 1.35rem;
+}
+
+.site-footer__inner--recomposed .site-footer__brand-block {
+  grid-area: brand;
+  align-self: center;
+}
+
+.site-footer__inner--recomposed .footer-brand--large .footer-brand__mark {
+  width: 58px;
+  height: 58px;
+}
+
+.site-footer__inner--recomposed .footer-brand__title {
+  font-size: 1.08rem;
+}
+
+.site-footer__inner--recomposed .footer-brand__subtitle {
+  max-width: 390px;
+}
+
+.site-footer__inner--recomposed .site-footer__note {
+  display: none !important;
+}
+
+.site-footer__contacts--vertical {
+  grid-area: contacts;
+  width: min(430px, 100%);
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0.75rem;
+  justify-self: end;
+}
+
+.site-footer__contacts--vertical .site-footer__contact-card {
+  min-height: 76px;
+  width: 100%;
+}
+
+.site-footer__bottom {
+  grid-area: bottom;
+  display: grid;
+  justify-items: center;
+  align-self: end;
+  gap: 0.78rem;
+  padding-top: 0.2rem;
+}
+
+.site-footer__bottom .footer-socials,
+.site-footer__bottom .footer-socials--center {
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.site-footer__bottom .footer-socials__item {
+  width: 3.05rem;
+  height: 3.05rem;
+}
+
+.site-footer__bottom .footer-privacy {
+  min-height: 2.9rem;
+  min-width: min(360px, 100%);
+  justify-content: center;
+  color: rgba(76, 96, 86, 0.82);
+  text-align: center;
+}
+
+@media (max-width: 1279px) {
+  .site-footer__inner.site-footer__inner--recomposed {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "contacts"
+      "bottom";
+    min-height: 0;
+  }
+
+  .site-footer__contacts--vertical {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .site-footer__contacts--vertical {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer__inner.site-footer__inner--recomposed {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .site-footer__inner--recomposed .footer-brand--large .footer-brand__mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .site-footer__bottom .footer-socials,
+  .site-footer__bottom .footer-socials--center {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .site-footer__bottom .footer-socials__item {
+    width: 100%;
+  }
+
+  .site-footer__bottom .footer-privacy {
+    width: 100%;
+    min-width: 0;
+  }
+}
+/* End Step 35 recomposed footer layout */
