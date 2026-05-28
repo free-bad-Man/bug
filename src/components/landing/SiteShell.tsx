@@ -76,7 +76,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
       </main>
 
       <footer className="site-footer">
-        <div className="site-footer__inner site-footer__inner--recomposed glass">
+        <div className="site-footer__inner site-footer__inner--final glass">
           <div className="site-footer__brand-block">
             <Link href="/" className="footer-brand footer-brand--large" aria-label={company.name}>
               <img className="footer-brand__mark" src="/images/logo-mark.png" alt="" aria-hidden="true" />
@@ -87,7 +87,7 @@ export function SiteShell({ background, children }: SiteShellProps) {
             </Link>
           </div>
 
-          <div className="site-footer__contacts site-footer__contacts--vertical" aria-label="Контактная информация">
+          <div className="site-footer__contacts site-footer__contacts--stacked" aria-label="Контактная информация">
             <div className="site-footer__contact-card">
               <span className="site-footer__contact-icon" aria-hidden="true">
                 <MdLocationOn />
@@ -109,8 +109,8 @@ export function SiteShell({ background, children }: SiteShellProps) {
             </div>
           </div>
 
-          <div className="site-footer__bottom">
-            <div className="footer-socials footer-socials--center" aria-label="Социальные и контактные каналы">
+          <div className="site-footer__center">
+            <div className="footer-socials footer-socials--footer-center" aria-label="Социальные и контактные каналы">
               {footerSocials.map((item) => (
                 <span
                   key={item.label}
