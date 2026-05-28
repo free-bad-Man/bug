@@ -2064,3 +2064,88 @@ textarea {
   }
 }
 /* End Step 31 header hero alignment yandex map */
+/* Step 32 header typography and contacts address */
+@media (min-width: 768px) {
+  .brand--header {
+    min-width: 390px;
+  }
+
+  .brand--header .brand__mark {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brand--header .brand__title {
+    color: rgba(16, 38, 26, 0.86) !important;
+    font-size: 17px !important;
+    font-weight: 680 !important;
+    letter-spacing: -0.018em !important;
+    line-height: 1.05 !important;
+  }
+
+  .brand--header .brand__subtitle {
+    max-width: 310px;
+    overflow: hidden;
+    color: rgba(79, 98, 88, 0.68) !important;
+    font-size: 10.8px !important;
+    font-weight: 460 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.18 !important;
+    text-overflow: ellipsis;
+  }
+
+  .site-header__nav-link {
+    color: rgba(76, 96, 86, 0.74) !important;
+    font-size: 0.98rem !important;
+    font-weight: 470 !important;
+    letter-spacing: -0.01em;
+  }
+
+  .site-header__nav-link:hover {
+    color: rgba(16, 38, 26, 0.92) !important;
+  }
+
+  .site-header__phone {
+    min-width: 112px;
+    color: rgba(76, 96, 86, 0.78) !important;
+    font-size: 0.94rem !important;
+    font-weight: 520 !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .brand--header {
+    min-width: 330px;
+  }
+
+  .brand--header .brand__mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand--header .brand__title {
+    font-size: 15.5px !important;
+    font-weight: 680 !important;
+  }
+
+  .brand--header .brand__subtitle {
+    max-width: 265px;
+    font-size: 9.6px !important;
+  }
+
+  .site-header__nav-link {
+    font-size: 0.86rem !important;
+    font-weight: 470 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .brand__title {
+    font-weight: 680 !important;
+  }
+
+  .brand__subtitle {
+    font-weight: 460 !important;
+  }
+}
+/* End Step 32 header typography and contacts address */

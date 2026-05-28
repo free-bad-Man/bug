@@ -53,10 +53,10 @@ export function SiteShell({ background, children }: SiteShellProps) {
             </nav>
 
             <Link
-              href="/kontakty/"
+              href="/#lead"
               className="glass-button-strong site-header__phone shrink-0 rounded-2xl px-4 py-2 text-sm font-semibold transition"
             >
-              Контакты
+              Расчёт
             </Link>
 
             <MobileMenu />
