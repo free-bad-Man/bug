@@ -12,7 +12,7 @@ export function MobileMenu() {
   }
 
   return (
-    <div className="mobile-burger">
+    <div className={isOpen ? "mobile-burger mobile-burger--open" : "mobile-burger"}>
       <button
         className="mobile-burger__button"
         type="button"
@@ -38,8 +38,8 @@ export function MobileMenu() {
           ))}
         </nav>
 
-        <Link className="mobile-burger__phone" href="/kontakty/" onClick={closeMenu}>
-          Контакты
+        <Link className="mobile-burger__phone" href="/#lead" onClick={closeMenu}>
+          Заявка онлайн
         </Link>
       </div>
     </div>

@@ -2951,3 +2951,62 @@ textarea {
   }
 }
 /* End Step 37 footer heartline */
+/* Step 38 mobile burger click fix */
+.mobile-burger {
+  position: relative;
+  z-index: 120 !important;
+  pointer-events: auto !important;
+}
+
+.mobile-burger__button {
+  position: relative;
+  z-index: 125 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+}
+
+.mobile-burger__button::before,
+.mobile-burger__button::after,
+.mobile-burger__button span {
+  pointer-events: none !important;
+}
+
+.mobile-burger__panel {
+  z-index: 130 !important;
+  pointer-events: none;
+}
+
+.mobile-burger__panel--open {
+  pointer-events: auto !important;
+}
+
+.mobile-burger__link,
+.mobile-burger__phone {
+  pointer-events: auto !important;
+}
+
+@media (max-width: 1279px) {
+  .site-header {
+    z-index: 90 !important;
+  }
+
+  .site-header__inner,
+  .site-header__row {
+    overflow: visible !important;
+  }
+
+  .site-header__inner::before,
+  .site-header__inner::after,
+  .site-header__row::before,
+  .site-header__row::after {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+    pointer-events: none !important;
+  }
+
+  .site-header__phone {
+    display: none !important;
+  }
+}
+/* End Step 38 mobile burger click fix */
